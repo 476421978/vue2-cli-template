@@ -1,6 +1,5 @@
 import _ from 'lodash'
 import { mapState } from 'vuex'
-import { computed } from 'vue'
 import dayjs from 'dayjs'
 import { message } from 'ant-design-vue'
 
@@ -16,7 +15,9 @@ export default {
       }
     }
   },
-
+  computed: {
+    ...mapState([ 'stoUser' ])
+  },
   methods: {
     /**
    * 格式化时间

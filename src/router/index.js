@@ -1,18 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import AuthRouter from './auth'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '../views/login')
+    name: 'Index',
+    component: () => import(/* webpackChunkName: "Index" */ '@/views/index.vue')
   },
   {
-    path: '/home',
-    name: 'home',
-    component: () => import(/* webpackChunkName: "home" */ '../views/home')
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "Login" */ '@/views/login/index.vue')
+  },
+  {
+    path: '/403',
+    name: '403',
+    component: () => import(/* webpackChunkName: "403" */ '@/views/empty/403.vue')
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import(/* webpackChunkName: "404" */ '@/views/empty/404.vue')
+  },
+  {
+    path: '/layout',
+    name: 'Layout',
+    redirect: '/layout/home',
+    component: () => import(/* webpackChunkName: "Layout" */ '@/views/layout.vue'),
+    meta: {
+      requireAuth: true
+    },
+    children: AuthRouter
   }
 ]
 

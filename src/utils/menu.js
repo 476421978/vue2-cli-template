@@ -113,7 +113,10 @@ export const getMenuAllPath = function () {
         })
       }
       if (obj.path) {
-        keys.push(obj.key)
+        keys.push({
+          key: obj.key,
+          path: obj.path
+        })
       }
     }
   }
