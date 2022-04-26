@@ -1,5 +1,5 @@
 <template>
-  <a-config-provider :locale="zhCN">
+  <a-config-provider :locale="locale">
     <div style="min-height: 100vh">
       <router-view />
     </div>

@@ -5,10 +5,17 @@ import store from './store'
 
 // ant-desgin-vue按需引入
 import '../src/components/antDesignVue/index.js'
+// 全局样式
+import '../src/styles/base.css'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false // 阻止启动生产消息
+// 全局变量
+Vue.prototype.$isMobile = navigator.userAgent.match(
+  /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+)
 
-
+// 模拟数据mock 会拦截请求
+import '../mock/index.js'
 
 new Vue({
   router,
