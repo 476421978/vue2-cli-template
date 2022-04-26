@@ -14,6 +14,49 @@
           </template>
         </a-menu>
       </a-layout-sider>
+      <a-layout>
+        <!-- 头部 -->
+        <a-layout-header style="background: #fff; padding: 0; padding-right: 20px">
+          <!-- <menu-unfold-outlined v-if="collapsed" class="trigger" @click="() => (collapsed = !collapsed)" /> -->
+          <!-- <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" /> -->
+          <div class="user-wrapper">
+            <a-dropdown :trigger="['hover']" placement="bottomRight">
+              <div class="ant-dropdown-link" href="#">
+                {{ stoUser ? stoUser.account : '' }}
+              </div>
+              <template #overlay>
+                <a-menu>
+                  <a-menu-item key="3">
+                    <div @click="overloading">重载用户信息</div>
+                  </a-menu-item>
+                  <a-menu-item key="4">
+                    <div @click="onChangePass">修改密码</div>
+                  </a-menu-item>
+                  <a-menu-item key="5">
+                    <div @click="signOut">退出</div>
+                  </a-menu-item>
+                </a-menu>
+              </template>
+            </a-dropdown>
+          </div>
+        </a-layout-header>
+        <c-rumb :selectKey="selectedKeys[0]" />
+        <!-- 主内容 -->
+        <a-layout-content :style="{ margin: '12px 16px', padding: '24px', background: '#fff', minHeight: 'auto' }">
+          <router-view />
+        </a-layout-content>
+        <a-layout-footer style="text-align: center">
+          <a
+            target="_blank"
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44122502000031"
+            style="display: inline-block; text-decoration: none; height: 20px; line-height: 20px"
+            ><img src="../assets/备案图标.png" style="float: left" />
+            <p style="float: left; height: 20px; line-height: 20px; margin: 0px 0px 0px 5px; color: #939393">
+              粤公网安备 44122502000031号
+            </p></a
+          >
+        </a-layout-footer>
+      </a-layout>
     </a-layout>
   </a-layout>
 </template>
@@ -24,9 +67,11 @@ import utilsL from '@/utils/login.js'
 import { getMenuAllPath } from '@/utils/menu.js'
 import CommonMixin from '@/mixins/common'
 import SubMenu from '@/components/menu/SubMenu.vue'
+import Crumb from '@/components/crumb/index.vue'
 export default {
   components: {
-    'sub-menu': SubMenu
+    'sub-menu': SubMenu,
+    'c-rumb': Crumb
   },
   mixins: [CommonMixin],
   data() {
