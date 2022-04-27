@@ -5,7 +5,8 @@ import {
   Cascader, TimePicker, DatePicker, Table, Modal,
   Radio, Spin, Statistic, Tag, Switch, Divider, Checkbox,
   Tree, Calendar, InputNumber, Message, Tabs, Collapse,
-  Transfer, Popconfirm, Descriptions, List, Alert, Breadcrumb
+  Transfer, Popconfirm, Descriptions, List, Alert, Breadcrumb,
+  Card, Progress
 } from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
@@ -54,5 +55,7 @@ Vue.use(Descriptions)
 Vue.use(List)
 Vue.use(Alert)
 Vue.use(Breadcrumb)
+Vue.use(Card)
+Vue.use(Progress)
 
 // Vue.prototype.$message = Message

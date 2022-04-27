@@ -1,7 +1,7 @@
 <template>
   <div class="empty">
     <div>
-      <img src="@/assets/img_500.png" />
+      <img src="@/assets/500.svg" />
     </div>
     <a-button type="primary" @click="goBack">返回首页</a-button>
   </div>
@@ -11,7 +11,7 @@
 export default {
   methods: {
     goBack() {
-      router.push('/layout')
+      this.$router.push('/layout')
     }
   }
 }

@@ -7,7 +7,7 @@
           <!-- 循环菜单列表 -->
           <template v-for="item in getMenuList">
             <a-menu-item v-if="!hasChild(item)" :key="item.key">
-              <!-- <a-icon type="pie-chart" /> -->
+              <ComIcon :icon="item.icon" />
               <span>{{ item.name }}</span>
             </a-menu-item>
             <sub-menu v-else :key="item.key" :menu-info="item" />
@@ -17,8 +17,7 @@
       <a-layout>
         <!-- 头部 -->
         <a-layout-header style="background: #fff; padding: 0; padding-right: 20px">
-          <!-- <menu-unfold-outlined v-if="collapsed" class="trigger" @click="() => (collapsed = !collapsed)" /> -->
-          <!-- <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" /> -->
+           <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" class="trigger" @click="() => (collapsed = !collapsed)" />
           <div class="user-wrapper">
             <a-dropdown :trigger="['hover']" placement="bottomRight">
               <div class="ant-dropdown-link" href="#">
@@ -68,10 +67,12 @@ import { getMenuAllPath } from '@/utils/menu.js'
 import CommonMixin from '@/mixins/common'
 import SubMenu from '@/components/menu/SubMenu.vue'
 import Crumb from '@/components/crumb/index.vue'
+import ComIcon from '@/components/icon/index.vue'
 export default {
   components: {
     'sub-menu': SubMenu,
-    'c-rumb': Crumb
+    'c-rumb': Crumb,
+    ComIcon
   },
   mixins: [CommonMixin],
   data() {
@@ -110,7 +111,6 @@ export default {
       this.$nextTick(() => {
         menuList.forEach((element) => {
           if (element.key === this.selectedKeys[0]) {
-            console.log('element-->>', element)
             this.$router.push(`/layout/${element.path}`)
             return
           }

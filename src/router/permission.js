@@ -12,7 +12,6 @@ router.beforeEach((to, from, next) => {
       path: '/404'
     })
   }
-
   // 权限判断
   if (to.matched.some((res) => res.meta.requireAuth)) {
     // 获取用户信息
@@ -30,8 +29,10 @@ router.beforeEach((to, from, next) => {
     }
 
     // 判断进入页面是否需要权限
-    if (!to.meta.auth) next()
-
+    if (!to.meta.auth) {
+      next()
+      return
+    }
     // 需要权限并且有权限进入
     if (userInfo.vue_role?.web_auth_arr.includes(to.meta.auth)) {
       next()

@@ -1,7 +1,7 @@
 <template functional>
   <a-sub-menu :key="props.menuInfo.key">
     <span slot="title">
-      <!-- <a-icon type="mail" /> -->
+      <ComIcon :icon="props.menuInfo.icon" />
       <span>{{ props.menuInfo.name }}</span>
     </span>
     <template v-for="item in props.menuInfo.childMenu">

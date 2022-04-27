@@ -9,6 +9,12 @@ import '../src/components/antDesignVue/index.js'
 // 全局样式
 import '../src/styles/base.css'
 
+// 图表
+import ECharts from "vue-echarts";
+// eslint-disable-next-line vue/component-definition-name-casing
+Vue.component('v-chart', ECharts) //全局注册
+
+
 Vue.config.productionTip = false // 阻止启动生产消息
 // 全局变量
 Vue.prototype.$isMobile = navigator.userAgent.match(

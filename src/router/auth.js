@@ -45,7 +45,7 @@ export default [
     path: '/layout/empty/403',
     name: 'empty/403',
     meta: {
-      title: '404',
+      title: '403',
       key: '3-1'
     },
     component: () => import(/* webpackChunkName: "group-empty" */ '@/views/empty/403.vue')
@@ -54,7 +54,7 @@ export default [
     path: '/layout/empty/404',
     name: 'empty/404',
     meta: {
-      title: '403',
+      title: '404',
       key: '3-2'
     },
     component: () => import(/* webpackChunkName: "group-empty" */ '@/views/empty/404.vue')
