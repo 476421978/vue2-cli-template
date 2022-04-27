@@ -139,7 +139,7 @@ export default {
     },
     // 提交
     onSubmit() {
-      this.Toast({ msg: `${this.roleInfo ? '更新' : '创建'}成功` })
+      this.Toast({ msg: `${this.roleType === 'Add' ? '创建' : '更新'}成功` })
       this.$refs.DialogModalRef.onHideModal()
     },
     // 取消

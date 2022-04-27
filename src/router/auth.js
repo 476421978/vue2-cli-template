@@ -67,5 +67,14 @@ export default [
       key: '3-3'
     },
     component: () => import(/* webpackChunkName: "group-empty" */ '@/views/empty/500.vue')
+  },
+  {
+    path: '/layout/capaticy',
+    name: 'capaticy',
+    meta: {
+      title: '数据看板',
+      key: '4'
+    },
+    component: () => import(/* webpackChunkName: "group-empty" */ '@/views/capaticy/index.vue')
   }
 ]

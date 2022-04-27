@@ -125,8 +125,7 @@ export default {
     onSubmit() {
       // const res = await API.CreateUser(toRaw(formState))
       // emit('refreshData') // 刷新数据
-
-      this.Toast({ msg: `${this.userInfo ? '更新' : '创建'}成功` })
+      this.Toast({ msg: `${this.userType === 'Add' ? '创建' : '更新'}成功` })
       this.$refs.DialogModalRef.onHideModal()
     },
     onCancel() {

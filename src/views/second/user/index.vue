@@ -122,7 +122,7 @@ export default {
       this.userType = 'Add'
       this.userInfo = {}
       this.$nextTick(() => {
-        // this.$refs.UpdateUserModalRef.onShowModal()
+        this.$refs.UpdateUserModalRef.onShowModal()
       })
     },
     onDetail(item) {

@@ -72,7 +72,15 @@ export const menuList = [
         visible: false
       }
     ]
-  }
+  },
+  {
+    key: '4',
+    name: '数据看板',
+    icon: 'Echart',
+    path: 'capaticy',
+    auth: 'capaticy',
+    visible: false
+  },
 ]
 
 // 递归权限 过滤全局权限

@@ -11,8 +11,10 @@ import '../src/styles/base.css'
 
 // 图表
 import ECharts from "vue-echarts";
+import * as echarts from 'echarts' //引入echarts
 // eslint-disable-next-line vue/component-definition-name-casing
 Vue.component('v-chart', ECharts) //全局注册
+Vue.prototype.$echarts = echarts //引入组件
 
 
 Vue.config.productionTip = false // 阻止启动生产消息

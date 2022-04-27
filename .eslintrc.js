@@ -22,6 +22,7 @@ module.exports = {
       'vue/no-unused-components': 'off',
       'vue/no-deprecated-slot-attribute': 'off',
       'vue/no-deprecated-functional-template': 'off',
-      'vue/no-deprecated-slot-scope-attribute': 'off'
+      'vue/no-deprecated-slot-scope-attribute': 'off',
+      'vue/no-deprecated-destroyed-lifecycle': 'off'
     },
   };

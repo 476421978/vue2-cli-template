@@ -23,7 +23,7 @@ Mock.mock(RegExp('/vue_login'), function (options) {
         code: 1,
         describe: '全部',
         open_flag: 1,
-        web_auth_arr: ['home', 'setting', 'user', 'user-management', 'user-role'],
+        web_auth_arr: ['home', 'setting', 'user', 'user-management', 'user-role', 'capaticy'],
         created_at: '2021-11-10T16:00:00.000Z',
         updated_at: '2021-11-10T16:00:00.000Z',
         deleted_at: null
