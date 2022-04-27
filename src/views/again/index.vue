@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>二次封装</h2>
+    <h2>Modal二次封装</h2>
     <a-button type="primary" @click="openDialog">常规弹窗</a-button>
     <t-ant-modal v-model="visible" title="二次封装" @cancel="cancel" @ok="ok">
       <div class="select-ent-box flex-box flex-col">
@@ -62,7 +62,16 @@ export default {
     },
     cancel() {
       this.visible = false
-    },
+    }
   }
 }
 </script>
+
+<style lang="scss">
+.radio-line-item {
+  margin: 20px 0;
+}
+.radioSelected {
+  border: 1px solid red;
+}
+</style>
