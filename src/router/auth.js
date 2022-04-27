@@ -75,6 +75,15 @@ export default [
       title: '数据看板',
       key: '4'
     },
-    component: () => import(/* webpackChunkName: "group-empty" */ '@/views/capaticy/index.vue')
+    component: () => import(/* webpackChunkName: "group-capaticy" */ '@/views/capaticy/index.vue')
+  },
+  {
+    path: '/layout/again',
+    name: 'again',
+    meta: {
+      title: '二次封装',
+      key: '5'
+    },
+    component: () => import(/* webpackChunkName: "group-again" */ '@/views/again/index.vue')
   }
 ]

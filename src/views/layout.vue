@@ -17,7 +17,11 @@
       <a-layout>
         <!-- 头部 -->
         <a-layout-header style="background: #fff; padding: 0; padding-right: 20px">
-           <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" class="trigger" @click="() => (collapsed = !collapsed)" />
+          <a-icon
+            :type="collapsed ? 'menu-unfold' : 'menu-fold'"
+            class="trigger"
+            @click="() => (collapsed = !collapsed)"
+          />
           <div class="user-wrapper">
             <a-dropdown :trigger="['hover']" placement="bottomRight">
               <div class="ant-dropdown-link" href="#">
@@ -118,7 +122,10 @@ export default {
       })
     },
     overloading() {
-      alert('重载信息')
+      utilsL.UtiLogin({
+        account: this.stoUser.account
+      })
+      this.Toast({ type: 'success', msg: '重载信息成功' })
     },
     onChangePass() {
       alert('修改密码')

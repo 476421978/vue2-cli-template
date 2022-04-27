@@ -1,5 +1,5 @@
 <template>
-  <DialogModal ref="DialogModalRef" :title="dialogTitle" :isHideFooter="true">
+  <DialogModal ref="DialogModalRef" :title="dialogTitle">
     <template slot="content">
       <a-form ref="formRef" :model="formState" :label-col="labelCol" :wrapper-col="wrapperCol" :rules="rules">
         <a-form-item name="name" label="名称">

@@ -19,10 +19,12 @@ module.exports = {
     },
     rules: {
       // 自定义你的规则
-      'vue/no-unused-components': 'off',
-      'vue/no-deprecated-slot-attribute': 'off',
-      'vue/no-deprecated-functional-template': 'off',
-      'vue/no-deprecated-slot-scope-attribute': 'off',
-      'vue/no-deprecated-destroyed-lifecycle': 'off'
+      'vue/no-unused-components': 'off', // 未使用组件
+      'vue/no-deprecated-slot-attribute': 'off', // vue2旧语法 slot
+      'vue/no-deprecated-functional-template': 'off', // vue2 functional
+      'vue/no-deprecated-slot-scope-attribute': 'off', // vue2旧语法
+      'vue/no-deprecated-destroyed-lifecycle': 'off', // vue2旧生命周期
+      'vue/no-deprecated-dollar-listeners-api': 'off', // vue2旧语法
+      'vue/no-duplicate-attributes': 'off', // 重复class :class
     },
   };

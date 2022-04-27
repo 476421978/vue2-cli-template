@@ -6,15 +6,22 @@ import store from './store'
 
 // ant-desgin-vue按需引入
 import '../src/components/antDesignVue/index.js'
+import Tui from './antPackages' // 二次封装组件
 // 全局样式
 import '../src/styles/base.css'
 
 // 图表
 import ECharts from "vue-echarts";
 import * as echarts from 'echarts' //引入echarts
+
+
+
 // eslint-disable-next-line vue/component-definition-name-casing
 Vue.component('v-chart', ECharts) //全局注册
 Vue.prototype.$echarts = echarts //引入组件
+
+// ant 二次封装
+Vue.use(Tui)
 
 
 Vue.config.productionTip = false // 阻止启动生产消息

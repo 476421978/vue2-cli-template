@@ -16,11 +16,6 @@ export default {
           sure: '确定'
         }
       }
-    },
-    isHideFooter: {
-      // 页脚
-      type: Boolean,
-      default: false
     }
   },
   data() {

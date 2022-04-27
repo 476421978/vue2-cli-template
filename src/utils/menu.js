@@ -81,6 +81,14 @@ export const menuList = [
     auth: 'capaticy',
     visible: false
   },
+  {
+    key: '5',
+    name: '二次封装',
+    icon: '',
+    path: 'again',
+    auth: '',
+    visible: false
+  },
 ]
 
 // 递归权限 过滤全局权限
