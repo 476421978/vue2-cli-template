@@ -62,11 +62,12 @@
 import { roleColumns } from './data'
 import API from '@/api/index'
 import updateRoleModal from './components/updateRoleModal.vue'
-
+import CommonMixin from '@/mixins/common'
 export default {
   components: {
     updateRoleModal
   },
+  mixins: [CommonMixin],
   data() {
     return {
       columns: roleColumns,
@@ -105,7 +106,7 @@ export default {
       })
     },
     onSearch() {
-      $Toast({ type: 'info', msg: `搜索${this.searchTxt}` })
+      this.Toast({type: 'info',msg: `${this.searchTxt}`})
     },
     onDetail(item) {
       this.roleType = 'Detail'

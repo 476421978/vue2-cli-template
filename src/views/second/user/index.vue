@@ -74,10 +74,12 @@ import API from '@/api'
 import { userColumns } from './data'
 import dayjs from 'dayjs'
 import UpdateUserModal from './components/updateUserModal.vue'
+import CommonMixin from '@/mixins/common'
 export default {
   components: {
     UpdateUserModal
   },
+  mixins: [CommonMixin],
   data() {
     return {
       dayjs,
@@ -110,7 +112,9 @@ export default {
       })
     },
     // 搜索
-    onSearch() {},
+    onSearch() {
+      this.Toast({type: 'info',msg: `${this.searchTxt}`})
+    },
     // 翻页
     handleTableChange(pag) {
       this.getOrderList({
