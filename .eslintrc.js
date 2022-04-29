@@ -26,5 +26,6 @@ module.exports = {
       'vue/no-deprecated-destroyed-lifecycle': 'off', // vue2旧生命周期
       'vue/no-deprecated-dollar-listeners-api': 'off', // vue2旧语法
       'vue/no-duplicate-attributes': 'off', // 重复class :class
+      'vue/no-duplicate-attr-inheritance': 'off', // 重复继承根元素attribute
     },
   };

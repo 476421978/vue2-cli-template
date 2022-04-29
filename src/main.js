@@ -4,9 +4,14 @@ import router from './router'
 import './router/permission'
 import store from './store'
 
+// 全局引入elementUi
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
 // ant-desgin-vue按需引入
 import '../src/components/antDesignVue/index.js'
-import Tui from './antPackages' // 二次封装组件
+import Tui from './packages' // 二次封装组件
+
 // 全局样式
 import '../src/styles/base.css'
 
@@ -14,7 +19,7 @@ import '../src/styles/base.css'
 import ECharts from "vue-echarts";
 import * as echarts from 'echarts' //引入echarts
 
-
+Vue.use(ElementUI)
 
 // eslint-disable-next-line vue/component-definition-name-casing
 Vue.component('v-chart', ECharts) //全局注册

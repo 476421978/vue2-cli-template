@@ -7,7 +7,7 @@
 </template>
 <script>
 export default {
-  name: 'TAntModal',
+  name: 'TModal',
   model: {
     prop: 'visible',
     event: 'change'

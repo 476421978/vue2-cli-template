@@ -12,7 +12,7 @@
           <div class="logo-wrapper">
             <img src="@/assets/work_logo.png" />
           </div>
-          <div class="title margin-left">管理系统</div>
+          <div class="title margin-left">展示系统</div>
         </div>
         <div class="form-container">
           <div class="item-wrapper">

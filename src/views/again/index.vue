@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Modal二次封装</h2>
+    <h2>Modal</h2>
     <a-button type="primary" @click="openDialog">常规弹窗</a-button>
-    <t-ant-modal v-model="visible" title="二次封装" @cancel="cancel" @ok="ok">
+    <t-modal v-model="visible" title="二次封装" @cancel="cancel" @ok="ok">
       <div class="select-ent-box flex-box flex-col">
         <div
           v-for="item in entList"
@@ -16,12 +16,20 @@
           <span style="color: #999">(企业编码:{{ item.entCode }})</span>
         </div>
       </div>
-    </t-ant-modal>
+    </t-modal>
+    <br />
+    <br />
+    <h2>Input {{ input }}</h2>
+    <t-input v-model="input" :placeholder="inputPlaceholder" :clearable="inputClearable" />
   </div>
 </template>
 
 <script>
+// import LjInput from './components/LjInput'
 export default {
+  components: {
+    // 'lj-input': LjInput
+  },
   data() {
     return {
       // 二次封装弹窗组件
@@ -42,7 +50,11 @@ export default {
           entType: null,
           entIdPcloud: '717380413542105088'
         }
-      ]
+      ],
+      // input
+      inputPlaceholder: 'input自定义提示',
+      inputClearable: true,
+      input: ''
     }
   },
   mounted() {
