@@ -21,6 +21,17 @@
     <br />
     <h2>Input {{ input }}</h2>
     <t-input v-model="input" :placeholder="inputPlaceholder" :clearable="inputClearable" />
+    <br />
+    <br />
+    <h2>Search： 选择：{{selectValue}} 查询：{{searchValue}}</h2>
+    <t-search
+      tips="请输入用户名"
+      :searchValue="searchValue"
+      :selectValue="selectValue"
+      :options="sOptions"
+      @click="onSearch"
+      @change="onSearchChange"
+    />
   </div>
 </template>
 
@@ -54,7 +65,32 @@ export default {
       // input
       inputPlaceholder: 'input自定义提示',
       inputClearable: true,
-      input: ''
+      input: '',
+      // search
+      searchValue: '', // 搜索内容
+      selectValue: '选项1', // 初始化下拉选项
+      sOptions: [
+        {
+          value: '选项1',
+          label: '黄金糕'
+        },
+        {
+          value: '选项2',
+          label: '双皮奶'
+        },
+        {
+          value: '选项3',
+          label: '蚵仔煎'
+        },
+        {
+          value: '选项4',
+          label: '龙须面'
+        },
+        {
+          value: '选项5',
+          label: '北京烤鸭'
+        }
+      ]
     }
   },
   mounted() {
@@ -74,6 +110,14 @@ export default {
     },
     cancel() {
       this.visible = false
+    },
+    // Search
+    onSearch(val) {
+      console.log('点击查询按钮-->>>>', val)
+      this.searchValue = val
+    },
+    onSearchChange(val) {
+      this.selectValue = val
     }
   }
 }
