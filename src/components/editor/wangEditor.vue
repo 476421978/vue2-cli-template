@@ -1,13 +1,15 @@
 <template>
   <div>
-    <div ref="editor" style="text-align:left"></div>
+    <div ref="editor" style="text-align: left"></div>
   </div>
 </template>
 
 <script>
 import E from 'wangeditor'
 export default {
-  data () {
+  name: 'WangEditor',
+  emits: ['editor-change'],
+  data() {
     return {
       editor: null,
       editorContent: '',
@@ -26,7 +28,7 @@ export default {
         'justify', // 对齐方式
         'quote', // 引用
         // 'emoticon', // 表情
-        'image', // 插入图片
+        // 'image', // 插入图片
         // 'table', // 表格
         'code', // 插入代码
         'undo', // 撤销
@@ -35,16 +37,19 @@ export default {
       ]
     }
   },
+  mounted() {
+    this.init()
+  },
   methods: {
     /** 重置内容 */
-    resetContent (content) {
+    resetContent(content) {
       this.editor.txt.clear()
       this.editor.txt.html(content)
     },
     /**
      * 配置初始哈
      */
-    init () {
+    init() {
       this.editor = new E(this.$refs.editor)
       this.editor.config.onchange = this.onchange()
       // 菜单去掉video
@@ -59,16 +64,16 @@ export default {
     /**
      * 获取内容
      */
-    onchange () {
+    onchange() {
       return (html) => {
         this.editorContent = html
-        this.$emit('editorChange', this.editorContent)
+        this.$emit('editor-change', this.editorContent)
       }
     },
     /**
      * 上传图片监听
      */
-    upImg () {
+    upImg() {
       const that = this
       return {
         // 如果服务器端返回的不是 {errno:0, data: [...]} 这种格式，可使用该配置
@@ -84,13 +89,6 @@ export default {
         }
       }
     }
-  },
-  mounted () {
-    this.init()
   }
 }
 </script>
-
-<style>
-
-</style>

@@ -29,7 +29,10 @@
         <div class="my-width flex-sub margin-top">
           <div class="flex justify-between">
             <a-checkbox v-model:checked="autoLogin">自动登录</a-checkbox>
-            <div>忘记密码？</div>
+            <a-tooltip>
+              <template slot="title"> admin </template>
+              <div>密码提示？</div>
+            </a-tooltip>
           </div>
         </div>
       </div>

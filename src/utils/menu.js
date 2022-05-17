@@ -89,6 +89,23 @@ export const menuList = [
     auth: '',
     visible: false
   },
+  {
+    key: '6',
+    name: '富文本',
+    icon: '',
+    path: 'editor',
+    auth: '',
+    visible: false
+  },
+  {
+    key: '7',
+    name: '代码笔记',
+    icon: '',
+    path: 'codeNote',
+    auth: '',
+    visible: false
+  },
+  
 ]
 
 // 递归权限 过滤全局权限

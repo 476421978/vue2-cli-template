@@ -85,5 +85,23 @@ export default [
       key: '5'
     },
     component: () => import(/* webpackChunkName: "group-again" */ '@/views/again/index.vue')
+  },
+  {
+    path: '/layout/editor',
+    name: 'editor',
+    meta: {
+      title: '富文本',
+      key: '6'
+    },
+    component: () => import(/* webpackChunkName: "group-editor" */ '@/views/editor/index.vue')
+  },
+  {
+    path: '/layout/codeNote',
+    name: 'codeNote',
+    meta: {
+      title: '代码笔记',
+      key: '7'
+    },
+    component: () => import(/* webpackChunkName: "group-codeNote" */ '@/views/codeNote/index.vue')
   }
 ]
