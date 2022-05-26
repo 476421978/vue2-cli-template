@@ -19,6 +19,7 @@ import '../src/styles/base.css'
 import ECharts from "vue-echarts";
 import * as echarts from 'echarts' //引入echarts
 
+
 Vue.use(ElementUI)
 
 // eslint-disable-next-line vue/component-definition-name-casing
