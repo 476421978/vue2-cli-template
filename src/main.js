@@ -5,8 +5,8 @@ import './router/permission'
 import store from './store'
 
 // 全局引入elementUi
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 // ant-desgin-vue按需引入
 import '../src/components/antDesignVue/index.js'
@@ -16,9 +16,12 @@ import Tui from './packages' // 二次封装组件
 import '../src/styles/base.css'
 
 // 图表
-import ECharts from "vue-echarts";
+import ECharts from 'vue-echarts'
 import * as echarts from 'echarts' //引入echarts
 
+// template 直接使用 可选链
+import { chaining } from '@/utils/common'
+Vue.use(chaining)
 
 Vue.use(ElementUI)
 
@@ -28,7 +31,6 @@ Vue.prototype.$echarts = echarts //引入组件
 
 // ant 二次封装
 Vue.use(Tui)
-
 
 Vue.config.productionTip = false // 阻止启动生产消息
 // 全局变量
@@ -42,5 +44,5 @@ import '../mock/index.js'
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App)
 }).$mount('#app')
