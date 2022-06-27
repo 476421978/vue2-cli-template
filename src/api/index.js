@@ -16,5 +16,11 @@ export default {
   GetRoleList: (data) => POST('/get_role_list', data),
 
   /** 刷新token */
-  RefreshToken: (data) => POST('/refresh_token', data)
+  RefreshToken: (data) => POST('/refresh_token', data),
+
+  /** 获取下拉框列表 */
+  AgentSelect: (data) => POST('/agent_select', data),
+  
+  /** 级联 */
+  ProvinceCityDistrict: (data) => POST('/province_city_district', data)
 }

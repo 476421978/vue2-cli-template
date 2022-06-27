@@ -24,6 +24,10 @@ module.exports = {
     'vue/no-deprecated-dollar-listeners-api': 'off', // vue2旧语法
     'vue/no-duplicate-attributes': 'off', // 重复class :class
     'vue/no-duplicate-attr-inheritance': 'off', // 重复继承根元素attribute
-    'vue/vue/no-v-model-argument': 'off'
+    'vue/vue/no-v-model-argument': 'off',
+    'vue/attributes-order ': 'off', // template属性排序
+    'vue/custom-event-name-casing': 'off', // 自定义事件名必须用 kebab-case 风格
+    'vue/require-explicit-emits': 'off', // emits 属性必须包含 $emit() 中的值
+    'vue/attributes-order': 'off' // 标签属性必须按规则排序
   }
 }
