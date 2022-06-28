@@ -1,9 +1,13 @@
 <template>
   <div>
-    <div>测试.? template直接使用 ---  $$(orderInfo, 'a', 'b', 'c', 'd') || '无' => {{ $$(orderInfo, 'a', 'b', 'c', 'd') || '无' }}</div>
-    <div>测试.? computed,methods等使用 --- this.orderInfo?.a?.b?.c?.d?.h || '无' => {{ getC }}</div>
-    <br />
     <el-link type="primary" :href="noteUrl">跳转看云笔记</el-link>
+    <br />
+    <br />
+    <div class="vw-test">
+      测试.? template直接使用 --- $$(orderInfo, 'a', 'b', 'c', 'd') || '无' =>
+      {{ $$(orderInfo, 'a', 'b', 'c', 'd') || '无' }}
+    </div>
+    <div class="vw-test-2">测试.? computed,methods等使用 --- this.orderInfo?.a?.b?.c?.d?.h || '无' => {{ getC }}</div>
   </div>
 </template>
 
@@ -28,3 +32,11 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.vw-test {
+  font-size: 28px;
+}
+.vw-test-2{
+  font-size: 32px;
+}
+</style>

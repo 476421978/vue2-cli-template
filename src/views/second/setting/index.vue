@@ -38,7 +38,7 @@
           <a-upload
             v-model:file-list="fileList"
             class="margin-top"
-            :multiple="true"
+            multiple
             action="/upload"
             :headers="headers"
             :before-upload="beforeUpload"

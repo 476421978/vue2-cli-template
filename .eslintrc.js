@@ -28,6 +28,10 @@ module.exports = {
     'vue/attributes-order ': 'off', // template属性排序
     'vue/custom-event-name-casing': 'off', // 自定义事件名必须用 kebab-case 风格
     'vue/require-explicit-emits': 'off', // emits 属性必须包含 $emit() 中的值
-    'vue/attributes-order': 'off' // 标签属性必须按规则排序
+    'vue/attributes-order': 'off', // 标签属性必须按规则排序
+    // 安装postcss-px-to-viewport后的报错
+    'vue/valid-attribute-name': 'off', // 属性名必须合法
+    'vue/valid-model-definition': 'off' // model 的属性名必须合法
+
   }
 }
