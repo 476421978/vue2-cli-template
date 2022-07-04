@@ -103,5 +103,14 @@ export default [
       key: '7'
     },
     component: () => import(/* webpackChunkName: "group-codeNote" */ '@/views/codeNote/index.vue')
+  },
+  {
+    path: '/layout/threeDemo',
+    name: 'threeDemo',
+    meta: {
+      title: 'Three示例',
+      key: '8'
+    },
+    component: () => import(/* webpackChunkName: "group-threeDemo" */ '@/views/threeDemo/index.vue')
   }
 ]

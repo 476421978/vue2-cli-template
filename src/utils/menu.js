@@ -105,6 +105,14 @@ export const menuList = [
     auth: '',
     visible: false
   },
+  {
+    key: '8',
+    name: 'Three示例',
+    icon: '',
+    path: 'threeDemo',
+    auth: '',
+    visible: false
+  },
   
 ]
 
