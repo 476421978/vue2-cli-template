@@ -2,7 +2,11 @@ import router from './index'
 import Store from '@/store/index'
 import Storage from '@/utils/storage'
 
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 router.beforeEach((to, from, next) => {
+  NProgress.start()
   // 进入404
   if (from.name === '404' || to.path === '/404') next()
 
@@ -43,4 +47,8 @@ router.beforeEach((to, from, next) => {
   } else {
     next()
   }
+})
+
+router.afterEach(() => {
+  NProgress.done()
 })

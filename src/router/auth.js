@@ -112,5 +112,23 @@ export default [
       key: '8'
     },
     component: () => import(/* webpackChunkName: "group-threeDemo" */ '@/views/threeDemo/index.vue')
+  },
+  {
+    path: '/layout/xlsxDemo',
+    name: 'xlsxDemo',
+    meta: {
+      title: 'Xlsx示例',
+      key: '9'
+    },
+    component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/xlsxDemo/index.vue')
   }
+  // {
+  //   path: '/layout/qiniuDemo',
+  //   name: 'qiniuDemo',
+  //   meta: {
+  //     title: '七牛云',
+  //     key: '10'
+  //   },
+  //   component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/qiniuDemo/index.vue')
+  // }
 ]

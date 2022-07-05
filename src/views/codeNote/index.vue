@@ -3,6 +3,7 @@
     <el-link type="primary" :href="noteUrl">跳转看云笔记</el-link>
     <br />
     <br />
+    <div>测试可选链和vw适配</div>
     <div class="vw-test">
       测试.? template直接使用 --- $$(orderInfo, 'a', 'b', 'c', 'd') || '无' =>
       {{ $$(orderInfo, 'a', 'b', 'c', 'd') || '无' }}
@@ -36,7 +37,7 @@ export default {
 .vw-test {
   font-size: 28px;
 }
-.vw-test-2{
+.vw-test-2 {
   font-size: 32px;
 }
 </style>

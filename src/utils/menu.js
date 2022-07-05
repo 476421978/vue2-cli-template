@@ -113,7 +113,22 @@ export const menuList = [
     auth: '',
     visible: false
   },
-  
+  {
+    key: '9',
+    name: 'Xlsx示例',
+    icon: '',
+    path: 'XlsxDemo',
+    auth: '',
+    visible: false
+  }
+  // {
+  //   key: '10',
+  //   name: '七牛云上传图片',
+  //   icon: '',
+  //   path: 'qiniuDemo',
+  //   auth: '',
+  //   visible: false
+  // }
 ]
 
 // 递归权限 过滤全局权限
