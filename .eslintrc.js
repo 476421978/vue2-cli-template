@@ -1,4 +1,5 @@
 module.exports = {
+  
   extends: ['eslint-config-alloy/vue'],
   env: {
     // 你的环境变量（包含多个预定义的全局变量）

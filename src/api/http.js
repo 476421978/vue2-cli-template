@@ -22,6 +22,7 @@ let instance = axios.create({
 let isRefreshing = false // 标记是否正在刷新 token
 let requests = [] // 存储待重发请求的数组
 
+// Post请求
 let POST = function (url, data, options) {
   let code, result
   return new Promise(function (resolve, reject) {

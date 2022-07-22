@@ -104,15 +104,44 @@ export default [
     },
     component: () => import(/* webpackChunkName: "group-codeNote" */ '@/views/codeNote/index.vue')
   },
+
   {
-    path: '/layout/threeDemo',
-    name: 'threeDemo',
+    path: '/layout/threeDemo/rain',
+    name: 'rain',
     meta: {
-      title: 'Three示例',
-      key: '8'
+      title: '雨天',
+      key: '8-1'
     },
-    component: () => import(/* webpackChunkName: "group-threeDemo" */ '@/views/threeDemo/index.vue')
+    component: () => import(/* webpackChunkName: "group-threeDemo" */ '@/views/threeDemo/rain/index.vue')
   },
+  {
+    path: '/layout/threeDemo/360/round',
+    name: 'round',
+    meta: {
+      title: '圆-360°全景',
+      key: '8-2'
+    },
+    component: () => import(/* webpackChunkName: "group-user" */ '@/views/threeDemo/360/round.vue')
+  },
+  {
+    path: '/layout/threeDemo/360/skyBox',
+    name: 'skyBox',
+    meta: {
+      title: '立-360°全景',
+      key: '8-3'
+    },
+    component: () => import(/* webpackChunkName: "group-user" */ '@/views/threeDemo/360/skyBox.vue')
+  },
+  {
+    path: '/layout/threeDemo/360/panolens',
+    name: 'panolens',
+    meta: {
+      title: 'panolens-360°全景',
+      key: '8-4'
+    },
+    component: () => import(/* webpackChunkName: "group-user" */ '@/views/threeDemo/360/panolens.vue')
+  },
+
   {
     path: '/layout/xlsxDemo',
     name: 'xlsxDemo',

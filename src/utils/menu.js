@@ -108,11 +108,35 @@ export const menuList = [
   {
     key: '8',
     name: 'Three示例',
-    icon: '',
-    path: 'threeDemo',
-    auth: '',
-    visible: false
+    visible: false,
+    childMenu: [
+      {
+        key: '8-1',
+        name: '雨天',
+        path: 'threeDemo/rain',
+        visible: false
+      },
+      {
+        key: '8-2',
+        name: '圆-360°全景',
+        path: 'threeDemo/360/round',
+        visible: false
+      },
+      {
+        key: '8-3',
+        name: '立-360°全景',
+        path: 'threeDemo/360/skyBox',
+        visible: false
+      },
+      {
+        key: '8-4',
+        name: '外封装-360°全景',
+        path: 'threeDemo/360/panolens',
+        visible: false
+      }
+    ]
   },
+
   {
     key: '9',
     name: 'Xlsx示例',

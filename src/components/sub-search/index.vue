@@ -65,7 +65,6 @@ import TSelect from './com/TSelect/index'
 import TCascader from './com/TCascader/index'
 import TDatePicker from './com/TDatePicker/index'
 import TAarea from './com/TArea/index'
-import { getForm } from './data.js'
 export default {
   name: 'TSearch',
   components: {
@@ -163,11 +162,10 @@ export default {
       }
     }
   },
-
   computed: {
     // 获取表单信息
     comGetForm() {
-      return getForm(this.searchData)
+      return this.getForm(this.searchData)
     },
     // 代理商
     getAgentId() {
@@ -233,7 +231,6 @@ export default {
         console.log('getAgentList--->>>', error)
       }
     },
-
     // 获取省市区数据
     async getCascade(item = this.params) {
       try {
@@ -250,6 +247,14 @@ export default {
       } catch (error) {
         console.log('getCascade--->>>', error)
       }
+    },
+    // 获取 form 对象
+    getForm(dataArr = []) {
+      let fromObj = {}
+      dataArr.forEach((element) => {
+        fromObj[element.fName] = element.fValue
+      })
+      return fromObj
     }
   }
 }

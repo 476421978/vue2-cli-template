@@ -125,13 +125,3 @@ export const mockData = [
   }
 ]
 
-// 获取 form 对象
-export const getForm = function(dataArr = []) {
-  let fromObj = {}
-
-  dataArr.forEach((element) => {
-    fromObj[element.fName] = element.fValue
-  })
-
-  return fromObj
-}
