@@ -97,14 +97,14 @@ export const menuList = [
     auth: '',
     visible: false
   },
-  {
-    key: '7',
-    name: '代码笔记',
-    icon: '',
-    path: 'codeNote',
-    auth: '',
-    visible: false
-  },
+  // {
+  //   key: '7',
+  //   name: '代码笔记',
+  //   icon: '',
+  //   path: 'codeNote',
+  //   auth: '',
+  //   visible: false
+  // },
   {
     key: '8',
     name: 'Three示例',
@@ -144,15 +144,15 @@ export const menuList = [
     path: 'XlsxDemo',
     auth: '',
     visible: false
+  },
+  {
+    key: '10',
+    name: '七牛云上传图片',
+    icon: '',
+    path: 'qiniuDemo',
+    auth: '',
+    visible: false
   }
-  // {
-  //   key: '10',
-  //   name: '七牛云上传图片',
-  //   icon: '',
-  //   path: 'qiniuDemo',
-  //   auth: '',
-  //   visible: false
-  // }
 ]
 
 // 递归权限 过滤全局权限

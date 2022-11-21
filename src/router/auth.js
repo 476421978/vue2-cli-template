@@ -95,15 +95,15 @@ export default [
     },
     component: () => import(/* webpackChunkName: "group-editor" */ '@/views/editor/index.vue')
   },
-  {
-    path: '/layout/codeNote',
-    name: 'codeNote',
-    meta: {
-      title: '代码笔记',
-      key: '7'
-    },
-    component: () => import(/* webpackChunkName: "group-codeNote" */ '@/views/codeNote/index.vue')
-  },
+  // {
+  //   path: '/layout/codeNote',
+  //   name: 'codeNote',
+  //   meta: {
+  //     title: '代码笔记',
+  //     key: '7'
+  //   },
+  //   component: () => import(/* webpackChunkName: "group-codeNote" */ '@/views/codeNote/index.vue')
+  // },
 
   {
     path: '/layout/threeDemo/rain',
@@ -150,14 +150,14 @@ export default [
       key: '9'
     },
     component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/xlsxDemo/index.vue')
+  },
+  {
+    path: '/layout/qiniuDemo',
+    name: 'qiniuDemo',
+    meta: {
+      title: '七牛云',
+      key: '10'
+    },
+    component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/qiniuDemo/index.vue')
   }
-  // {
-  //   path: '/layout/qiniuDemo',
-  //   name: 'qiniuDemo',
-  //   meta: {
-  //     title: '七牛云',
-  //     key: '10'
-  //   },
-  //   component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/qiniuDemo/index.vue')
-  // }
 ]

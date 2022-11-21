@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- chrome6.3内核不兼容 -->
     <div ref="editor" style="text-align: left"></div>
   </div>
 </template>

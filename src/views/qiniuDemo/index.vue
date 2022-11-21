@@ -1,77 +1,148 @@
 <template>
   <div class="upload">
+    <div>
+      为了方便演示都是同一张 jpg | jpeg 图片上传覆盖(compressorjs压缩、vue-cropper裁剪)
+      <img style="width: 50px; height: 50px" src="@/assets/上传示例.jpg" />
+    </div>
+
     <el-upload
       class="avatar-uploader"
-      :action="domain"
-      :http-request="upqiniu"
       :show-file-list="false"
+      :action="domain"
+      :http-request="upQiniu"
       :before-upload="beforeUpload"
     >
       <img v-if="imageUrl" :src="imageUrl" class="avatar" />
       <i v-else class="el-icon-plus avatar-uploader-icon" />
     </el-upload>
+    <div>外链地址：{{imageUrl}}</div>
+
+    <!-- 裁剪logo -->
+    <el-dialog title="裁剪" :visible.sync="imageCut_pop" width="50%" height="800px" :before-close="onHideCut">
+      <VueCropper class="vue-cropper-style" ref="cropper" v-bind="cropper" />
+      <span slot="footer">
+        <el-button @click="imageCut_pop = false">取 消</el-button>
+        <el-button type="primary" :loading="upLoading" @click="onUploadQiniu">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
-import { uploadToken } from './data'
+import Compressor from 'compressorjs'
+import { getUploadToken } from './data'
 import axios from 'axios'
+import dayjs from 'dayjs'
+import { VueCropper } from 'vue-cropper'
 export default {
+  components: {
+    VueCropper
+  },
   data() {
     return {
       imageUrl: '',
       token: {},
       domain: 'https://upload-z2.qiniup.com', // 华南2
-      qiniuAddr: 'rdb357l8d.hn-bkt.clouddn.com' // 外联域名
+      qiniuAddr: 'qiniu.hlgshare.top', // 外联域名
+      // 裁剪
+      imageCut_pop: false,
+      upLoading: false,
+      cropper: {
+        img: '',
+        // outputSize: '1', 裁剪生成图片的质量(0.1~1)
+        // outputTyp: 'png', // 裁剪生成图片的格式
+        autoCropWidth: 300, // 默认生成截图框宽度
+        autoCropHeight: 300, // 默认生成截图框高度
+        autoCrop: true, // 是否默认生成截图框
+        // fixedBox: true, // 固定裁剪框
+        canMove: true, // 上传图片是否可以移动
+        canMoveBox: true // 截图框能否拖动
+      }
     }
   },
-  mounted() {
-    console.log('uploadToken--->>>', uploadToken)
-  },
   methods: {
-    // 上传文件到七牛云
-    upqiniu(req) {
-      const config = {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      }
-
-      let filetype = ''
-      if (req.file.type === 'image/png') {
-        filetype = 'png'
-      } else {
-        filetype = 'jpg'
-      }
-      // 重命名要上传的文件
-      const keyName = 'lytton' + new Date() + Math.floor(Math.random() * 100) + '.' + filetype
-
-      // 前端直接生成上传凭证token
-      const formdata = new FormData()
-      formdata.append('file', req.file)
-      formdata.append('token', uploadToken)
-      formdata.append('key', keyName)
-
-      // 获取到凭证之后再将文件上传到七牛云空间
-      axios
-        .post(this.domain, formdata, config)
-        .then((res) => {
-          this.imageUrl = 'http://' + this.qiniuAddr + '/' + res.data.key
-          console.log(this.imageUrl)
-        })
-        .catch((err) => {
-          console.log('err--->>>>', err)
-        })
+    onShowCut() {
+      this.imageCut_pop = true
     },
-    // 验证文件合法性
+    onHideCut() {
+      this.imageCut_pop = false
+    },
+    // 上传压缩
     beforeUpload(file) {
-      const isJPG = file.type === 'image/jpeg' || file.type === 'image/png'
+      return new Promise((resolve) => {
+        new Compressor(file, {
+          convertSize: 1,
+          success: resolve,
+          error(err) {
+            this.Toast({ type: 'error', message: '图片压缩失败' })
+          }
+        })
+      })
+    },
+    // 验证文件合法性，显示裁剪弹窗
+    upQiniu(req) {
+      const { file } = req
       const isLt2M = file.size / 1024 / 1024 < 2
-      if (!isJPG) {
-        this.$message.error('上传头像图片只能是 JPG 格式!')
-      }
+
       if (!isLt2M) {
         this.$message.error('上传头像图片大小不能超过 2MB!')
       }
-      return isJPG && isLt2M
+
+      // jpg|jpeg|png|bmp|JPG|PNG
+      if (!/(jpg|jpeg)$/.test(file.type.split('/')[1])) {
+        this.$message.error('图片类型必须是jpg')
+        return false
+      }
+
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onload = () => {
+        this.cropper.img = reader.result
+        this.onShowCut()
+      }
+    },
+    blobToFile(blob, fileName) {
+      blob.lastModifiedDate = new Date()
+      blob.name = fileName
+      return blob
+    },
+    // 裁剪完成上传文件
+    onUploadQiniu() {
+      const that = this
+      this.$refs.cropper.getCropBlob(async (blobFile) => {
+        let filetype = ''
+        if (blobFile.type == 'image/jpeg' || blobFile.type == 'image/jpg') {
+          filetype = 'jpg'
+        } else if (blobFile.type == 'image/png') {
+          filetype = blobFile.type.split('/')[1]
+        }
+        // const keyName = `${dayjs().format('YYYY-MM-DD')}-${Math.random().toString(36).substr(2, 10)}.${filetype}`
+        const keyName = `images/vue2.${filetype}`
+        const file = this.blobToFile(blobFile, keyName)
+        const token = getUploadToken(keyName)
+        const formData = new FormData()
+        formData.append('file', file)
+        formData.append('token', token)
+        formData.append('key', keyName)
+
+        this.upLoading = true
+        // 获取到凭证之后再将文件上传到七牛云空间
+        axios
+          .post('https://upload-z2.qiniup.com', formData, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+          })
+          .then((res) => {
+            that.imageUrl = `http://${that.qiniuAddr}/${res.data.key}`
+            that.$message.success('上传成功')
+            that.onHideCut()
+          })
+          .catch((err) => {
+            that.$message.error('上传失败')
+          })
+          .finally(() => {
+            that.upLoading = false
+          })
+      })
     }
   }
 }
@@ -100,5 +171,13 @@ export default {
   width: 178px;
   height: 178px;
   display: block;
+}
+
+::v-deep .el-upload {
+  border: 1px dashed #ccc;
+}
+.vue-cropper-style {
+  width: 100%;
+  height: 300px;
 }
 </style>
