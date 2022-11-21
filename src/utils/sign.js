@@ -1,7 +1,7 @@
 // 前置需要内容
 import qs from 'qs'
 import { sha256 } from 'js-sha256'
-import VueConfig from '@/utils/config'
+import VueConfig from '@/config/config'
 // import { randomString } from '@/utils/common'
 
 // 获取随机数

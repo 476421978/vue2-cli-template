@@ -8,6 +8,7 @@ export function randomString(length) {
   return result
 }
 
+// template 直接使用 可选链
 export const chaining = {
   install(vue) {
     const optionalChaining = (obj, ...rest) => {

@@ -2,7 +2,7 @@ import axios from 'axios'
 import store from '@/store'
 import storage from '../utils/storage'
 import AES from '../utils/aesUtil'
-import VueConfig from '../utils/config'
+import VueConfig from '../config/config'
 import sign from '../utils/sign'
 // 框架
 import { message } from 'ant-design-vue'

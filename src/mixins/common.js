@@ -11,7 +11,7 @@ export default {
         passwordReg: /^[a-zA-Z0-9_-]{4,16}$/, // 密码正则
         phoneReg: /^1[3|4|5|6|7|8|9][0-9]\d{8}$/, // 手机号
         idReg: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/, // 身份证
-        isEmptyInputReg: /^S{1,}/ //
+        isEmptyInputReg: /^S{1,}/ // 空值
       }
     }
   },

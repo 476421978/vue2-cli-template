@@ -13,7 +13,7 @@ export default {
     event: 'change'
   },
   computed: {
-    attrs () {
+    attrs() {
       return {
         cancelText: '取消',
         okText: '确定',
