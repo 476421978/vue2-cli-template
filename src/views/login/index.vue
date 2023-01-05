@@ -37,6 +37,8 @@
         </div>
       </div>
     </div>
+
+    <div class="footer">CopyRight@20230105</div>
   </div>
 </template>
 
@@ -237,6 +239,13 @@ export default {
         }
       }
     }
+  }
+
+  .footer{
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    color: #ccc;
   }
 }
 </style>

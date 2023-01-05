@@ -7,10 +7,7 @@ import sign from '../utils/sign'
 // 框架
 import { message } from 'ant-design-vue'
 
-const PRO_URL = 'https://hlgshare.top'
-const DEV_URL = 'http://127.0.0.1:7001'
-
-let URL_PREFIX = process.env.NODE_ENV === 'development' ? `${DEV_URL}/master_web` : `${PRO_URL}/master_web`
+let URL_PREFIX = `${process.env.VUE_APP_BASE_URL}/master_web`
 
 // 创建实例
 let instance = axios.create({

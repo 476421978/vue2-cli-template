@@ -25,10 +25,13 @@
           <div class="user-wrapper">
             <a-dropdown :trigger="['hover']" placement="bottomRight">
               <div class="ant-dropdown-link" href="#">
-                {{ stoUser ? stoUser.account : '' }}
+                <img style="width: 42px; height: 42px; border-radius:50%;" src="@/assets/gif/user.gif" />
               </div>
               <template #overlay>
                 <a-menu>
+                  <a-menu-item key="2" disabled>
+                    <div>{{ stoUser ? stoUser.account : '' }}</div>
+                  </a-menu-item>
                   <a-menu-item key="3">
                     <div @click="overloading">重载用户信息</div>
                   </a-menu-item>

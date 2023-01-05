@@ -159,5 +159,14 @@ export default [
       key: '10'
     },
     component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/qiniuDemo/index.vue')
+  },
+  {
+    path: '/layout/mapDemo',
+    name: 'mapDemo',
+    meta: {
+      title: '地图',
+      key: '11'
+    },
+    component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/mapDemo/index.vue')
   }
 ]

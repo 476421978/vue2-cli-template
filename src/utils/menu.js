@@ -152,6 +152,14 @@ export const menuList = [
     path: 'qiniuDemo',
     auth: '',
     visible: false
+  },
+  {
+    key: '11',
+    name: '地图',
+    icon: '',
+    path: 'mapDemo',
+    auth: '',
+    visible: false
   }
 ]
 
