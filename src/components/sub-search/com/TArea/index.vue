@@ -39,7 +39,6 @@ export default {
   },
   watch: {
     areaArr() {
-      console.log('watch进来呀')
       this.TAareaArr = this.areaArr
     }
   },

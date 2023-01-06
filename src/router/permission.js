@@ -1,7 +1,5 @@
 import router from './index'
 import Store from '@/store/index'
-import Storage from '@/utils/storage'
-
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -22,14 +20,9 @@ router.beforeEach((to, from, next) => {
     let userInfo = Store.state.stoUser
     // 找不到 则local重载用户信息
     if (!userInfo) {
-      userInfo = Storage.get('VUE_USER_INFO')
-      Store.dispatch('saveUser', userInfo)
-      // 如果还是没有则要求重新登录
-      if (!userInfo) {
-        next({
-          path: '/login'
-        })
-      }
+      next({
+        path: '/login'
+      })
     }
 
     // 判断进入页面是否需要权限

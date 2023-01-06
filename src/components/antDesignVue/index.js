@@ -6,7 +6,7 @@ import {
   Radio, Spin, Statistic, Tag, Switch, Divider, Checkbox,
   Tree, Calendar, InputNumber, Message, Tabs, Collapse,
   Transfer, Popconfirm, Descriptions, List, Alert, Breadcrumb,
-  Card, Progress, Upload, Avatar
+  Card, Progress, Upload, Avatar, Anchor, Drawer
 } from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
@@ -59,5 +59,7 @@ Vue.use(Card)
 Vue.use(Progress)
 Vue.use(Upload)
 Vue.use(Avatar)
+Vue.use(Anchor)
+Vue.use(Drawer)
 
 // Vue.prototype.$message = Message

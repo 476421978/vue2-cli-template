@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import './router/permission'
 import store from './store'
+import {setStorage, getStorage, removeStorage, getAllStorage, clearStorage} from './utils/storage'
 
 // 全局引入elementUi
 import ElementUI from 'element-ui'
@@ -33,10 +34,19 @@ Vue.prototype.$echarts = echarts //引入组件
 Vue.use(Tui)
 
 Vue.config.productionTip = false // 阻止启动生产消息
+
 // 全局变量
 Vue.prototype.$isMobile = navigator.userAgent.match(
   /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
 )
+// store
+Vue.prototype.$store = store
+// storage
+Vue.prototype.$setStorage = setStorage
+Vue.prototype.$getStorage = getStorage 
+Vue.prototype.$removeStorage = removeStorage 
+Vue.prototype.$getAllStorage = getAllStorage 
+Vue.prototype.$clearStorage = clearStorage 
 
 // 模拟数据mock 会拦截请求
 import '../mock/index.js'

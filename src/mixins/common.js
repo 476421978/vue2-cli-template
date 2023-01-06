@@ -16,7 +16,7 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'stoUser' ])
+    ...mapState([ 'stoUser', 'globalSetting' ])
   },
   methods: {
     /**

@@ -25,7 +25,7 @@
           <div class="user-wrapper">
             <a-dropdown :trigger="['hover']" placement="bottomRight">
               <div class="ant-dropdown-link" href="#">
-                <img style="width: 42px; height: 42px; border-radius:50%;" src="@/assets/gif/user.gif" />
+                <img style="width: 42px; height: 42px; border-radius: 50%" src="@/assets/gif/user.gif" />
               </div>
               <template #overlay>
                 <a-menu>
@@ -50,6 +50,26 @@
         <!-- 主内容 -->
         <a-layout-content :style="{ margin: '12px 16px', padding: '24px', background: '#fff', minHeight: 'auto' }">
           <router-view />
+          <a-anchor
+            :affix="false"
+            :wrapperStyle="{
+              transition: '1s',
+              '-moz-transition': '1s' /* Firefox */,
+              '-webkit-transition': '1s' /* Safari and Chrome */,
+              '-ms-transition': '1s' /* Safari */,
+              transform: visible ? 'translateX(-256px)' : 'translateX(0)',
+              position: 'fixed',
+              top: '50%',
+              right: '0',
+              background: '#1890ff',
+              padding: '5px',
+              'border-radius': '4px 0 0 4px',
+              cursor: 'pointer',
+              'z-index': '888'
+            }"
+          >
+            <img src="@/assets/setting_white.png" style="width: 32px; height: 32px" @click="handleClick"/>
+          </a-anchor>
         </a-layout-content>
         <a-layout-footer style="text-align: center">
           <a
@@ -64,6 +84,7 @@
         </a-layout-footer>
       </a-layout>
     </a-layout>
+    <setting-drawer ref="SettingDrawerRef" :visible.sync="visible"/>
   </a-layout>
 </template>
 
@@ -75,8 +96,10 @@ import CommonMixin from '@/mixins/common'
 import SubMenu from '@/components/menu/SubMenu.vue'
 import Crumb from '@/components/crumb/index.vue'
 import ComIcon from '@/components/icon/index.vue'
+import SettingDrawer from '@/components/theme/settingDrawer.vue'
 export default {
   components: {
+    'setting-drawer': SettingDrawer,
     'sub-menu': SubMenu,
     'c-rumb': Crumb,
     ComIcon
@@ -86,7 +109,8 @@ export default {
     return {
       collapsed: false,
       menuList,
-      selectedKeys: ['0']
+      selectedKeys: ['0'],
+      visible: false
     }
   },
   computed: {
@@ -108,6 +132,10 @@ export default {
     }
   },
   methods: {
+    handleClick(e) {
+      // e.preventDefault()
+      this.visible = true
+    },
     hasChild(item) {
       return item.childMenu && item.childMenu.length
     },
@@ -146,7 +174,7 @@ export default {
   min-height: 100vh;
 }
 #components-layout-demo-custom-trigger .trigger {
-  font-size: 18px;
+  font-size: 24px;
   line-height: 64px;
   padding: 0 24px;
   cursor: pointer;

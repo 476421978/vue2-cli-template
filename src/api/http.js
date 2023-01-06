@@ -1,9 +1,8 @@
 import axios from 'axios'
 import store from '@/store'
-import storage from '../utils/storage'
-import AES from '../utils/aesUtil'
-import VueConfig from '../config/config'
-import sign from '../utils/sign'
+import AES from '@/utils/aesUtil'
+import VueConfig from '@/config/config'
+import sign from '@/utils/sign'
 // 框架
 import { message } from 'ant-design-vue'
 
@@ -136,7 +135,6 @@ instance.interceptors.response.use(
             userInfo.token = res.token
 
             // 更新用户token存储信息
-            storage.set('VUE_USER_INFO', userInfo)
             store.dispatch('saveUser', userInfo)
             config.headers.token = res.token
 
