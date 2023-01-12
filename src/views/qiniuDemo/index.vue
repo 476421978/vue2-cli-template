@@ -2,7 +2,7 @@
   <div class="upload">
     <div>
       为了方便演示都是同一张 jpg | jpeg 图片上传覆盖(compressorjs压缩、vue-cropper裁剪)
-      <img style="width: 50px; height: 50px" src="@/assets/上传示例.jpg" />
+      <img style="width: 50px; height: 50px" src="@/assets/upload_example.jpg" />
     </div>
 
     <el-upload

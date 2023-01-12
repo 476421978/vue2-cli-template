@@ -68,7 +68,7 @@
               'z-index': '888'
             }"
           >
-            <img src="@/assets/setting_white.png" style="width: 32px; height: 32px" @click="handleClick"/>
+            <img src="@/assets/setting/setting_white.png" style="width: 32px; height: 32px" @click="handleClick"/>
           </a-anchor>
         </a-layout-content>
         <a-layout-footer style="text-align: center">
@@ -198,5 +198,9 @@ export default {
 .user-wrapper {
   float: right;
   padding: 0 12px;
+}
+
+.ant-anchor-ink{
+  display: none;
 }
 </style>
