@@ -25,29 +25,89 @@
       </el-upload>
     </div>
     <div>内容：{{ xlsxContent }}</div>
+    <br />
+    <button @click="exportXlsx">固定模板-导出xlsx</button>
+    <button @click="exportXlsxStyle">固定模板-改变导出xlsx的样式</button>
   </div>
 </template>
 
 <script>
 import * as XLSX from 'xlsx'
-import { upLoadDataLimit } from './data'
+import { upLoadDataLimit,classFiledNames,columnNames,list } from './data'
+import { excelExport, excelImport } from 'pikaz-excel-js'
+import ExportJsonExcel from 'js-export-excel'
 export default {
   data() {
     return {
-      upLoadDataLimit,
       domain: 'https://upload-z2.qiniup.com', // 华南2
       uploadState: '导入',
-      xlsxContent: ''
+      xlsxContent: '',
+      //
+      bgStyleArr: []
     }
   },
   methods: {
+    exportXlsx() {
+      var option = {}
+      option.fileName = 'excel'
+      option.datas = [
+        {
+          sheetData: list,
+          sheetName: 'sheet',
+          sheetFilter: classFiledNames,
+          sheetHeader: columnNames
+          // columnWidths: [20, 20]
+        }
+      ]
+      var toExcel = new ExportJsonExcel(option) //new
+      toExcel.saveExcel() //保存
+    },
+    exportXlsxStyle() {
+      this.bgStyleArr = []
+      for (let i = 1; i <= classFiledNames.length; i++) {
+        this.bgStyleArr.push({
+          cell: `${i}-1`,
+          fill: {fgColor: {rgb: 'B0C4DE'}}
+        })
+      }
+      excelExport({
+        sheet: [
+          {
+            // title: ''
+            tHeader: columnNames, // 表头
+            keys: classFiledNames, // 数据键名
+            table: list, // 表格数据
+            sheetName: 'sheetName',
+            cellStyle: this.bgStyleArr // 单元格样式
+          },
+          {
+          // 表格标题
+          title: "水果的味道1",
+          // 表头
+          tHeader: ["种类", "味道"],
+          // 数据键名
+          keys: ["name", "taste"],
+          // 表格数据
+          table: [{
+                  name: "荔枝",
+                  taste: "甜",
+              },
+              {
+                  name: "菠萝蜜",
+                  taste: "甜",
+              }
+          ],
+          sheetName: "水果的味道1",
+          }
+        ]
+      })
+    },
     // 选择文件限制数量
     onExceed(files, fileList) {
       if (files.length > 1) this.$message.warning('当前限制选择 1 个文件')
     },
     // 上传前的判断
     beforeUpload(file) {
-      console.log('file---beforeUpload-->>>', file)
       const reg = /^.*.(?:xls|xlsx|csv)$/i //文件名可以带空格
       if (!reg.test(file.name)) {
         this.errMessageToast('请选择正确的文件')

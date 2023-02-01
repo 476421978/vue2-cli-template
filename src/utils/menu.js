@@ -143,7 +143,7 @@ export const menuList = [
     name: 'Xlsx示例',
     icon: 'file-excel',
     path: 'XlsxDemo',
-    auth: 'file-excel',
+    auth: '',
     visible: false
   },
   {
