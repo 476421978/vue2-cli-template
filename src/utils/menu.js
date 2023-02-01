@@ -11,7 +11,7 @@ export const menuList = [
   {
     key: '0',
     name: '首页',
-    icon: 'HomeOutlined',
+    icon: 'home',
     path: 'home',
     auth: '',
     visible: false
@@ -19,7 +19,7 @@ export const menuList = [
   {
     key: '1',
     name: '设置页',
-    icon: 'MenuFoldOutlined',
+    icon: 'setting',
     visible: false,
     path: 'setting',
     auth: 'setting'
@@ -27,7 +27,7 @@ export const menuList = [
   {
     key: '2',
     name: '人物页',
-    icon: 'UserOutlined',
+    icon: 'user',
     visible: false,
     auth: 'user',
     childMenu: [
@@ -50,7 +50,7 @@ export const menuList = [
   {
     key: '3',
     name: '异常页',
-    icon: 'WarningOutlined',
+    icon: 'alert',
     visible: false,
     childMenu: [
       {
@@ -76,7 +76,7 @@ export const menuList = [
   {
     key: '4',
     name: '数据看板',
-    icon: 'Echart',
+    icon: 'bar-chart',
     path: 'capaticy',
     auth: 'capaticy',
     visible: false
@@ -84,7 +84,7 @@ export const menuList = [
   {
     key: '5',
     name: '二次封装',
-    icon: '',
+    icon: 'control',
     path: 'again',
     auth: '',
     visible: false
@@ -92,7 +92,7 @@ export const menuList = [
   {
     key: '6',
     name: '富文本',
-    icon: '',
+    icon: 'edit',
     path: 'editor',
     auth: '',
     visible: false
@@ -108,6 +108,7 @@ export const menuList = [
   {
     key: '8',
     name: 'Three示例',
+    icon: 'cloud',
     visible: false,
     childMenu: [
       {
@@ -140,15 +141,15 @@ export const menuList = [
   {
     key: '9',
     name: 'Xlsx示例',
-    icon: '',
+    icon: 'file-excel',
     path: 'XlsxDemo',
-    auth: '',
+    auth: 'file-excel',
     visible: false
   },
   {
     key: '10',
     name: '七牛云上传图片',
-    icon: '',
+    icon: 'cloud-upload',
     path: 'qiniuDemo',
     auth: '',
     visible: false
@@ -156,7 +157,7 @@ export const menuList = [
   {
     key: '11',
     name: '地图',
-    icon: '',
+    icon: 'environment',
     path: 'mapDemo',
     auth: '',
     visible: false

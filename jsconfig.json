@@ -1,12 +1,13 @@
+// 目录中出现 jsconfig.json 文件表明该目录是 JavaScript 项目的根目录。 Json 文件指定了根文件和 JavaScript 语言服务提供的特性的选项
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
-    "baseUrl": "./",
-    "moduleResolution": "node",
+    "target": "es5", // 	指定要使用的默认库(lib.d.ts)。值为 "es3", "es5", "es6", "es2015", "es2016", "es2017", "es2018", "es2019", "es2020", "esnext".
+    "module": "esnext", // 在生成模块代码时指定模块系统。值为“ amd”、“ commonJS”、“ es2015”、“ es6”、“ esnext”、“ none”、“ system”、“ umd”
+    "baseUrl": "./", // 解析非相关模块名称的基础目录
+    "moduleResolution": "node", // 指定如何解析导入模块。值为“node”和“classic”
     "paths": {
       "@/*": [
-        "src/*"
+        "src/*" // 解决项目中使用@作为路径别名，导致vscode无法跳转文件的问题
       ]
     },
     "lib": [
