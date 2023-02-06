@@ -38,7 +38,7 @@
       </div>
     </div>
     <!-- 底部 -->
-    <div class="footer">CopyRight@20230105</div>
+    <div class="footer">CopyRight@{{getVersion}}</div>
   </div>
 </template>
 
@@ -47,6 +47,7 @@ import ImageBg1 from '@/assets/img_login_bg_01.jpg'
 import ImageMobileBg1 from '@/assets/img_login_mobile_bg_01.jpg'
 import CommonMixin from '@/mixins/common'
 import utilsL from '@/utils/login'
+import dayjs from 'dayjs'
 export default {
   mixins: [CommonMixin],
   data() {
@@ -59,7 +60,11 @@ export default {
       autoLogin: true
     }
   },
-  mounted() {},
+  mounted: {
+    getVersion() {
+      return dayjs().format('YYYYMMDD')
+    }
+  },
   methods: {
     dataCheck() {
       try {
