@@ -26,41 +26,6 @@
     </a-row>
     <br />
 
-    <h3>导航模式</h3>
-    <a-row>
-      <a-col :lg="12" :md="12" :sm="12" :xs="12">
-        <a-tooltip>
-          <template #title>侧边栏导航</template>
-          <img class="theme-box" src="@/assets/setting/3.svg" @click="onChange('layoutBar', 'left')" />
-          <img v-if="getGlobalSetting.layoutBar === 'left'" class="theme-hook" src="@/assets/setting/right_hook.png" />
-        </a-tooltip>
-      </a-col>
-      <a-col :lg="12" :md="12" :sm="12" :xs="12">
-        <a-tooltip>
-          <template #title>顶部栏导航</template>
-          <img class="theme-box" src="@/assets/setting/4.svg" @click="onChange('layoutBar', 'top')" />
-          <img v-if="getGlobalSetting.layoutBar === 'top'" class="theme-hook" src="@/assets/setting/right_hook.png" />
-        </a-tooltip>
-      </a-col>
-    </a-row>
-    <br />
-
-    <h3>主题色</h3>
-    <a-row>
-      <a-col v-for="(item, index) in getBgColor" :key="index" :span="3">
-        <a-tooltip>
-          <template #title>{{ item.tip }}</template>
-          <div :style="'background-color:' + item.color" class="bg-color-box" @click="changeBgColor(item)" />
-          <img
-            v-if="item.key === getGlobalSetting.bgColorKey"
-            class="bg-color-hook"
-            src="@/assets/setting/hook_white.png"
-          />
-        </a-tooltip>
-      </a-col>
-    </a-row>
-    <br />
-
     <h3>全屏</h3>
     <a-row>
       <a-col :lg="24" :md="24" :sm="24" :xs="24">
@@ -108,12 +73,6 @@ export default {
         screenfull.toggle()
       }
       this.isFullscreen = screenfull.isFullscreen
-    },
-    changeBgColor(item) {
-      // globalSetting.value.bgColorKey = item.key
-      // toggleTheme({
-      //   scopeName: `theme-${item.name}`
-      // })
     },
     onChange(type, val) {
       let globalSetting = this.getGlobalSetting

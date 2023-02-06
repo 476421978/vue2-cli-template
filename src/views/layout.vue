@@ -1,9 +1,9 @@
 <template>
   <a-layout id="components-layout-demo-custom-trigger">
     <a-layout>
-      <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
+      <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible :theme="globalSetting.theme">
         <div class="logo" />
-        <a-menu v-model:selectedKeys="selectedKeys" mode="inline" theme="dark" @click="Location">
+        <a-menu v-model:selectedKeys="selectedKeys" mode="inline" :theme="globalSetting.theme" @click="Location">
           <!-- 循环菜单列表 -->
           <template v-for="item in getMenuList">
             <a-menu-item v-if="!hasChild(item)" :key="item.key">
@@ -16,7 +16,7 @@
       </a-layout-sider>
       <a-layout>
         <!-- 头部 -->
-        <a-layout-header style="background: #fff; padding: 0; padding-right: 20px">
+        <a-layout-header class="topMenu">
           <a-icon
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
             class="trigger"
@@ -92,7 +92,6 @@
 import { menuList } from '@/utils/menu.js'
 import utilsL from '@/utils/login.js'
 import { getMenuAllPath } from '@/utils/menu.js'
-import CommonMixin from '@/mixins/common'
 import SubMenu from '@/components/menu/SubMenu.vue'
 import Crumb from '@/components/crumb/index.vue'
 import ComIcon from '@/components/icon/index.vue'
@@ -104,7 +103,6 @@ export default {
     'c-rumb': Crumb,
     ComIcon
   },
-  mixins: [CommonMixin],
   data() {
     return {
       collapsed: false,
@@ -203,4 +201,12 @@ export default {
 .ant-anchor-ink{
   display: none;
 }
+
+.topMenu{
+    background: #fff;
+     padding: 0; 
+     padding-right: 20px
+  }
+
+
 </style>

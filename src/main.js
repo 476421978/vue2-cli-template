@@ -51,6 +51,10 @@ Vue.prototype.$clearStorage = clearStorage
 // 模拟数据mock 会拦截请求
 import '../mock/index.js'
 
+// 全局混入[不推荐]
+import CommonMixin from '@/mixins/common'
+Vue.mixin(CommonMixin)
+
 new Vue({
   router,
   store,

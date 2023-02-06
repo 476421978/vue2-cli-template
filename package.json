@@ -28,6 +28,7 @@
     "core-js": "^3.8.3",
     "crypto-js": "^4.1.1",
     "crypto-random-string": "^4.0.0",
+    "css-vars-ponyfill": "^2.4.8",
     "dayjs": "^1.10.7",
     "echarts": "5.2.2",
     "element-ui": "2.13.2",

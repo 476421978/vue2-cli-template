@@ -4,9 +4,8 @@ export default {
   IsOpenAesDec: false, // 是否开启Aes解密 response
   SignScript: 'Vue3', // 签名加密密钥
   GlobalSetting: {
-    theme: 'light', // 菜单模式
+    theme: 'light', // 主题
     isShowCrumb: true, // 隐藏面包屑
-    bgColorKey: '5', // 默认颜色
-    layoutBar: 'left' // 导航栏
+    // bgColorKey: '5' // 默认颜色
   }
 }

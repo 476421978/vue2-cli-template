@@ -97,14 +97,6 @@ export const menuList = [
     auth: '',
     visible: false
   },
-  // {
-  //   key: '7',
-  //   name: '代码笔记',
-  //   icon: '',
-  //   path: 'codeNote',
-  //   auth: '',
-  //   visible: false
-  // },
   {
     key: '8',
     name: 'Three示例',
@@ -159,6 +151,14 @@ export const menuList = [
     name: '地图',
     icon: 'environment',
     path: 'mapDemo',
+    auth: '',
+    visible: false
+  },
+  {
+    key: '7',
+    name: '调试面板',
+    icon: 'meh',
+    path: 'codeNote',
     auth: '',
     visible: false
   }

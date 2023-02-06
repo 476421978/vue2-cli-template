@@ -95,16 +95,15 @@ export default [
     },
     component: () => import(/* webpackChunkName: "group-editor" */ '@/views/editor/index.vue')
   },
-  // {
-  //   path: '/layout/codeNote',
-  //   name: 'codeNote',
-  //   meta: {
-  //     title: '代码笔记',
-  //     key: '7'
-  //   },
-  //   component: () => import(/* webpackChunkName: "group-codeNote" */ '@/views/codeNote/index.vue')
-  // },
-
+  {
+    path: '/layout/codeNote',
+    name: 'codeNote',
+    meta: {
+      title: '测试模块',
+      key: '7'
+    },
+    component: () => import(/* webpackChunkName: "group-codeNote" */ '@/views/codeNote/index.vue')
+  },
   {
     path: '/layout/threeDemo/rain',
     name: 'rain',
