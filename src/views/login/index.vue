@@ -60,7 +60,7 @@ export default {
       autoLogin: true
     }
   },
-  mounted: {
+  computed: {
     getVersion() {
       return dayjs().format('YYYYMMDD')
     }
