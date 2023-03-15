@@ -235,21 +235,26 @@ export function validatenumord(num, type) {
 
 /**
  * 判断是否为空
- * number string boolean [] {}
+ * @params val:number string boolean [] {}
  */
 export function validatenull(val) {
+  if (typeof val === 'string') {
+    if (val.trim() === '') return true
+    return false
+  }
   if (typeof val === 'boolean') {
     return false
   }
   if (typeof val === 'number') {
     return false
   }
+  
   if (val instanceof Array) { // []
     if (val.length === 0) return true
   } else if (val instanceof Object) { // [] {}
     if (JSON.stringify(val) === '{}') return true
   } else {
-    if (['null',null,'undefined',undefined,''].includes(val)) return true
+    if (['null',null,'undefined',undefined].includes(val)) return true
     return false
   }
   return false
