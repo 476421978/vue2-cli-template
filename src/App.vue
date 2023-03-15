@@ -16,18 +16,12 @@ export default {
     }
   },
   mounted() {
-    //实例化该类
-    // const up = new Updater({
-    //   timer: 3000
-    // })
-    // //未更新通知
-    // up.on('no-update', () => {
-    //   console.log('未更新')
-    // })
-    // //更新通知
-    // up.on('update', () => {
-    //   console.log('更新了')
-    // })
+    // 实例化该类
+    const up = new Updater()
+    //更新通知
+    up.on('update', () => {
+      alert('更新了版本')
+    })
   }
 }
 </script>

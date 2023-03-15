@@ -26,6 +26,22 @@ Vue.use(chaining)
 
 Vue.use(ElementUI)
 
+// import avueFormDesign from 'avue-plugin-formdesign'
+// import AvueUeditor from 'avue-plugin-ueditor'
+// Vue.use(AvueUeditor);
+// Vue.use(avueFormDesign);
+
+// npm 引入模式
+// import Avue from '@smallwei/avue';
+// import '@smallwei/avue/lib/index.css';
+// Vue.use(Avue);
+
+// 外部引入模式自动挂载Window下
+Vue.use(window.AVUE, {
+  size: 'medium',
+  menuType: 'text'
+})
+
 // eslint-disable-next-line vue/component-definition-name-casing
 Vue.component('v-chart', ECharts) //全局注册
 Vue.prototype.$echarts = echarts //引入组件

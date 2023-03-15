@@ -14,8 +14,8 @@ const routes = [
   {
     path: '/',
     name: 'Index',
-    component: () => import(/* webpackChunkName: "Index" */ '@/views/index.vue')
-    // component: () => import(/* webpackChunkName: "Index" */ '@/views/testDemo/index.vue')
+    // component: () => import(/* webpackChunkName: "Index" */ '@/views/index.vue')
+    component: () => import(/* webpackChunkName: "Index" */ '@/views/testDemo/index.vue')
   },
   {
     path: '/login',

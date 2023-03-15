@@ -16,6 +16,8 @@
     <!-- WebGL 版本的命名空间为 BMapGL，比如：new BMapGL.Map('container')。 -->
     <!-- <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=G3ZDoC4GrNI8yu8cGQgfzUOFGuM0ITMu"></script> -->
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=G3ZDoC4GrNI8yu8cGQgfzUOFGuM0ITMu"></script>
+
+    <link rel="stylesheet" href="<%= BASE_URL %>cdn/avue/index.css">
   </head>
   <body>
     <noscript>
@@ -23,5 +25,10 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script src='http://localhost:8000/CLodopfuncs.js'></script>
+
+    <script src="<%= BASE_URL %>cdn/avue/avue.js" charset="utf-8"></script>
+    <script src="<%= BASE_URL %>cdn/avue/avue.min.js" charset="utf-8"></script>
+    
   </body>
 </html>
