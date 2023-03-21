@@ -46,7 +46,7 @@
         </el-col>
       </template>
     </TSSearch>
-    <div>组合搜索框：{{subFormInfo}}</div>
+    <div>组合搜索框：{{ subFormInfo }}</div>
   </div>
 </template>
 

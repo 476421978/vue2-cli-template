@@ -63,7 +63,7 @@
         <div class="center-three-box" style="flex: 3; overflow: hidden">
           <div class="title ellipsis hover-active flex justify-center align-center" style="width: 20%">
             <span class="ellipsis">数据表单中心统计</span>
-            <img src="../../assets/capaticy/double_arrow.png" style="margin-left: 5px; width: 14px; height: 12px" />
+            <img src="../../../assets/capaticy/double_arrow.png" style="margin-left: 5px; width: 14px; height: 12px" />
           </div>
           <div class="tab flex flex-column" style="height: calc(100% - 24px)">
             <table class="tab-header" style="height: 22px; width: 100%">
@@ -95,7 +95,7 @@
               <span>{{ rightOneTimeArr[rightOneTimeArrIndex].label }}</span>
               <img
                 :class="['arrow-right', rightOneVisible ? '' : 'click-90deg']"
-                src="../../assets/capaticy/arrow_white.png"
+                src="../../../assets/capaticy/arrow_white.png"
               />
             </div>
             <div v-show="rightOneVisible" class="options">
@@ -120,7 +120,7 @@
               <span>{{ rightTwoTimeArr[rightTwoTimeArrIndex].label }}</span>
               <img
                 :class="['arrow-right', rightTwoVisible ? '' : 'click-90deg']"
-                src="../../assets/capaticy/arrow_white.png"
+                src="../../../assets/capaticy/arrow_white.png"
               />
             </div>
             <div v-show="rightTwoVisible" class="options">
@@ -664,7 +664,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import '../../assets/scss/index.css';
+// @import '../../../assets/scss/index.css';
 // common 样式
 .flex {
   display: flex;
@@ -734,7 +734,7 @@ div {
 .com-echart-ui {
   padding: 0 10px;
   height: 100vh;
-  background-image: url('../../assets/capaticy/bg.png');
+  background-image: url('../../../assets/capaticy/bg.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   .title-box {
@@ -743,7 +743,7 @@ div {
     line-height: 80px;
     margin-bottom: 20px;
     width: 100%;
-    background-image: url('../../assets/capaticy/title_bg.png');
+    background-image: url('../../../assets/capaticy/title_bg.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     .ui-title {
@@ -771,7 +771,7 @@ div {
 
     .left-one-box {
       .item-box {
-        background-image: url('../../assets/capaticy/left_one_bg.png');
+        background-image: url('../../../assets/capaticy/left_one_bg.png');
         background-repeat: no-repeat;
         background-size: 100% 100%;
         padding: 12px 10px;
@@ -790,11 +790,11 @@ div {
     }
 
     .left-two-box {
-      background-image: url('../../assets/capaticy/left_two_bg.png');
+      background-image: url('../../../assets/capaticy/left_two_bg.png');
     }
 
     .left-three-box {
-      background-image: url('../../assets/capaticy/left_three_bg.png');
+      background-image: url('../../../assets/capaticy/left_three_bg.png');
     }
 
     // ------- 中间 --------
@@ -802,7 +802,7 @@ div {
     .center-two-box,
     .center-three-box {
       position: relative;
-      background-image: url('../../assets/capaticy/center_one_bg.png');
+      background-image: url('../../../assets/capaticy/center_one_bg.png');
       background-repeat: no-repeat;
       background-size: 100% 100%;
     }
@@ -841,18 +841,18 @@ div {
     }
 
     .center-two-box {
-      background-image: url('../../assets/capaticy/center_two_bg.png');
+      background-image: url('../../../assets/capaticy/center_two_bg.png');
       text-align: center;
     }
 
     .center-three-box {
-      background-image: url('../../assets/capaticy/center_three_bg.png');
+      background-image: url('../../../assets/capaticy/center_three_bg.png');
     }
 
     // ------- 右边 --------
     .right-one-box,
     .right-two-box {
-      background-image: url('../../assets/capaticy/right_two_bg.png');
+      background-image: url('../../../assets/capaticy/right_two_bg.png');
       background-repeat: no-repeat;
       background-size: 100% 100%;
       .title {

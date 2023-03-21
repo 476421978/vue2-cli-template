@@ -3,7 +3,7 @@
     <el-row class="search-box" type="flex" :gutter="24">
       <el-form ref="comGetForm" :model="comGetForm" label-width="auto" size="large">
         <template v-for="(item, index) in searchData">
-          <el-col :key="index" :span="item.span || 6">
+          <el-col :span="item.span || 6">
             <el-form-item :label="`${item.title}`" :prop="item.fName" :rules="item.rules ? item.rules : []">
               <t-input
                 v-if="item.comType === 'input'"

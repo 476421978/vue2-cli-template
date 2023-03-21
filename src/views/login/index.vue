@@ -12,7 +12,7 @@
           <div class="logo-wrapper">
             <img src="@/assets/work_logo.png" />
           </div>
-          <div class="title margin-left">展示系统</div>
+          <div class="title margin-left">调试系统</div>
         </div>
         <div class="form-container">
           <div class="item-wrapper">
@@ -62,7 +62,7 @@ export default {
   },
   computed: {
     getVersion() {
-      return dayjs().format('YYYYMMDD')
+      return '20230321'
     }
   },
   methods: {

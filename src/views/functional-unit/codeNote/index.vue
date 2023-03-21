@@ -9,7 +9,7 @@
 
     <br />
     <div class="theme-bg">
-      <div class="theme-txt">文字 {{globalSetting.theme}}</div>
+      <div class="theme-txt">文字 {{ globalSetting.theme }}</div>
       <button @click="onChangeTheme">切换</button>
     </div>
   </div>
@@ -53,9 +53,8 @@ export default {
   font-size: 32px;
 }
 
-
-.theme-bg{
-  width:200px;
+.theme-bg {
+  width: 200px;
   height: 200px;
   border: 1px solid red;
   background: var(--bg);

@@ -10,7 +10,7 @@
               <ComIcon :icon="item.icon" />
               <span>{{ item.name }}</span>
             </a-menu-item>
-            <sub-menu v-else :key="item.key" :menu-info="item" />
+            <sub-menu v-else :menu-info="item" />
           </template>
         </a-menu>
       </a-layout-sider>
@@ -68,7 +68,7 @@
               'z-index': '888'
             }"
           >
-            <img src="@/assets/setting/setting_white.png" style="width: 32px; height: 32px" @click="handleClick"/>
+            <img src="@/assets/setting/setting_white.png" style="width: 32px; height: 32px" @click="handleClick" />
           </a-anchor>
         </a-layout-content>
         <a-layout-footer style="text-align: center">
@@ -84,7 +84,7 @@
         </a-layout-footer>
       </a-layout>
     </a-layout>
-    <setting-drawer ref="SettingDrawerRef" :visible.sync="visible"/>
+    <setting-drawer ref="SettingDrawerRef" :visible.sync="visible" />
   </a-layout>
 </template>
 
@@ -198,15 +198,13 @@ export default {
   padding: 0 12px;
 }
 
-.ant-anchor-ink{
+.ant-anchor-ink {
   display: none;
 }
 
-.topMenu{
-    background: #fff;
-     padding: 0; 
-     padding-right: 20px
-  }
-
-
+.topMenu {
+  background: #fff;
+  padding: 0;
+  padding-right: 20px;
+}
 </style>

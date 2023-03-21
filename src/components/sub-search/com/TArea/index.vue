@@ -1,9 +1,9 @@
 <template>
   <div class="t-area-com">
-    <template v-for="(item, index) in TAareaArr">
+    <template v-for="(item, index) in TAareaArr" >
       <el-select
-        v-model="item.id"
         :key="index"
+        v-model="item.id"
         class="area-select"
         :placeholder="item.placeholder"
         clearable

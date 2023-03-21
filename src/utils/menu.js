@@ -73,29 +73,28 @@ export const menuList = [
       }
     ]
   },
-  {
-    key: '4',
-    name: '数据看板',
-    icon: 'bar-chart',
-    path: 'capaticy',
-    auth: 'capaticy',
-    visible: false
-  },
+  
   {
     key: '5',
     name: '二次封装',
     icon: 'control',
     path: 'again',
     auth: '',
-    visible: false
-  },
-  {
-    key: '6',
-    name: '富文本',
-    icon: 'edit',
-    path: 'editor',
-    auth: '',
-    visible: false
+    visible: false,
+    childMenu: [
+      {
+        key: '5-1',
+        name: 'ant-design-again',
+        path: 'again/ant-design-again',
+        visible: false
+      },
+      {
+        key: '5-2',
+        name: 'element-again',
+        path: 'again/element-again',
+        visible: false
+      }
+    ]
   },
   {
     key: '8',
@@ -129,38 +128,85 @@ export const menuList = [
       }
     ]
   },
-
   {
-    key: '9',
-    name: 'Xlsx示例',
-    icon: 'file-excel',
-    path: 'XlsxDemo',
-    auth: '',
-    visible: false
-  },
-  {
-    key: '10',
-    name: '七牛云上传图片',
-    icon: 'cloud-upload',
-    path: 'qiniuDemo',
-    auth: '',
-    visible: false
-  },
-  {
-    key: '11',
-    name: '地图',
-    icon: 'environment',
-    path: 'mapDemo',
-    auth: '',
-    visible: false
-  },
-  {
-    key: '7',
-    name: '调试面板',
+    key: '12',
+    name: '功能菜单',
     icon: 'meh',
-    path: 'codeNote',
+    path: 'functional-unit',
     auth: '',
-    visible: false
+    visible: false,
+    childMenu: [
+      {
+        key: '12-1',
+        name: '调试面板',
+        path: 'functional-unit/codeNote',
+        visible: false
+      },
+      {
+        key: '12-2',
+        name: '富文本',
+        icon: 'edit',
+        path: 'functional-unit/editor',
+        auth: '',
+        visible: false
+      },
+      {
+        key: '12-3',
+        name: 'Xlsx示例',
+        icon: 'file-excel',
+        path: 'functional-unit/XlsxDemo',
+        auth: '',
+        visible: false
+      },
+      {
+        key: '12-4',
+        name: '七牛云上传图片',
+        icon: 'cloud-upload',
+        path: 'functional-unit/qiniuDemo',
+        auth: '',
+        visible: false
+      },
+      {
+        key: '12-5',
+        name: '地图',
+        icon: 'environment',
+        path: 'functional-unit/mapDemo',
+        auth: '',
+        visible: false
+      },
+      {
+        key: '12-6',
+        name: 'echart示例',
+        icon: 'bar-chart',
+        path: 'functional-unit/capaticy',
+        auth: 'capaticy',
+        visible: false
+      },
+      {
+        key: '12-7',
+        name: '虚拟列表',
+        icon: 'bar-chart',
+        path: 'functional-unit/scrollList',
+        auth: '',
+        visible: false
+      },
+      {
+        key: '12-8',
+        name: '拖动列表',
+        icon: 'bar-chart',
+        path: 'functional-unit/draggableDemo',
+        auth: '',
+        visible: false
+      },
+      {
+        key: '12-9',
+        name: 'AvueDemo',
+        icon: 'bar-chart',
+        path: 'functional-unit/AvueDemo',
+        auth: '',
+        visible: false
+      }
+    ]
   }
 ]
 

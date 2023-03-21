@@ -1,21 +1,34 @@
 <template>
-  <div class="test-demo">
-    <div>Avue2.7.1</div>
-    <avue-input v-model="form" placeholder="请输入内容"></avue-input>
-
-    
+  <div class="virtual-list">
+    <VueVirtualScrollList :size="50" :remain="10" :benchmarks="[0, 10000]" :items="items">
+      <template slot-scope="{ item }">
+        <div class="item">{{ item }}</div>
+      </template>
+    </VueVirtualScrollList>
   </div>
 </template>
 
 <script>
+import VueVirtualScrollList from 'vue-virtual-scroll-list'
 export default {
+  components: { VueVirtualScrollList },
   data() {
     return {
-      form: '我是内容'
+      items: [] // 数据源
     }
   },
-  methods: {}
+  created() {
+    // 模拟生成大量数据
+    for (let i = 1; i <= 100000; i++) {
+      this.items.push(i)
+    }
+  }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.virtual-list .item {
+  height: 50px;
+  line-height: 50px;
+}
+</style>

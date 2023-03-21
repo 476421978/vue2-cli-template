@@ -36,7 +36,7 @@ Vue.use(ElementUI)
 // import '@smallwei/avue/lib/index.css';
 // Vue.use(Avue);
 
-// 外部引入模式自动挂载Window下
+// /public/cdn外部引入模式自动挂载Window下
 Vue.use(window.AVUE, {
   size: 'medium',
   menuType: 'text'

@@ -8,7 +8,7 @@
 
 <script>
 import zhCN from 'ant-design-vue/lib/locale-provider/zh_CN'
-import { Updater } from '@/utils/upDater'
+// import { Updater } from '@/utils/upDater'
 export default {
   data() {
     return {
@@ -16,12 +16,12 @@ export default {
     }
   },
   mounted() {
-    // 实例化该类
-    const up = new Updater()
-    //更新通知
-    up.on('update', () => {
-      alert('更新了版本')
-    })
+    // // 实例化该类
+    // const up = new Updater()
+    // //更新通知
+    // up.on('update', () => {
+    //   alert('更新了版本')
+    // })
   }
 }
 </script>

@@ -5,7 +5,7 @@
         <a-breadcrumb-item v-if="item.path" :key="index">
           <a :href="item.path">{{ item.name }}</a>
         </a-breadcrumb-item>
-        <a-breadcrumb-item v-else :key="index">
+        <a-breadcrumb-item v-else>
           <span>{{ item.name }}</span>
         </a-breadcrumb-item>
       </template>

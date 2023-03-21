@@ -40,7 +40,7 @@ export default [
     },
     component: () => import(/* webpackChunkName: "group-user" */ '@/views/second/user/role/index.vue')
   },
-  /** 异常页 */
+  /** 异常页 start */
   {
     path: '/layout/empty/403',
     name: 'empty/403',
@@ -68,42 +68,30 @@ export default [
     },
     component: () => import(/* webpackChunkName: "group-empty" */ '@/views/empty/500.vue')
   },
+  /** 异常页 end */
+
+  /** 二次封装 start */
   {
-    path: '/layout/capaticy',
-    name: 'capaticy',
+    path: '/layout/again/ant-design-again',
+    name: 'ant-design-again',
     meta: {
-      title: '数据看板',
-      key: '4'
+      title: 'ant-design-again',
+      key: '5-1'
     },
-    component: () => import(/* webpackChunkName: "group-capaticy" */ '@/views/capaticy/index.vue')
+    component: () => import(/* webpackChunkName: "group-again-ant" */ '@/views/again/ant-design-again/index.vue')
   },
   {
-    path: '/layout/again',
-    name: 'again',
+    path: '/layout/again/element-again',
+    name: 'element-again',
     meta: {
-      title: '二次封装',
-      key: '5'
+      title: 'element-again',
+      key: '5-2'
     },
-    component: () => import(/* webpackChunkName: "group-again" */ '@/views/again/index.vue')
+    component: () => import(/* webpackChunkName: "group-again-element" */ '@/views/again/element-again/index.vue')
   },
-  {
-    path: '/layout/editor',
-    name: 'editor',
-    meta: {
-      title: '富文本',
-      key: '6'
-    },
-    component: () => import(/* webpackChunkName: "group-editor" */ '@/views/editor/index.vue')
-  },
-  {
-    path: '/layout/codeNote',
-    name: 'codeNote',
-    meta: {
-      title: '测试模块',
-      key: '7'
-    },
-    component: () => import(/* webpackChunkName: "group-codeNote" */ '@/views/codeNote/index.vue')
-  },
+  /** 二次封装 end */
+
+  /** Three示例 start */
   {
     path: '/layout/threeDemo/rain',
     name: 'rain',
@@ -140,32 +128,89 @@ export default [
     },
     component: () => import(/* webpackChunkName: "group-user" */ '@/views/threeDemo/360/panolens.vue')
   },
+  /** Three示例 end */
 
+  /** 功能页 start */
   {
-    path: '/layout/xlsxDemo',
+    path: '/layout/functional-unit/editor',
+    name: 'editor ',
+    meta: {
+      title: '富文本',
+      key: '12-2'
+    },
+    component: () => import(/* webpackChunkName: "group-editor" */ '@/views/functional-unit/editor/index.vue')
+  },
+  {
+    path: '/layout/functional-unit/codeNote',
+    name: 'codeNote',
+    meta: {
+      title: '测试模块',
+      key: '12-1'
+    },
+    component: () => import(/* webpackChunkName: "group-codeNote" */ '@/views/functional-unit/codeNote/index.vue')
+  },
+  {
+    path: '/layout/functional-unit/xlsxDemo',
     name: 'xlsxDemo',
     meta: {
       title: 'Xlsx示例',
-      key: '9'
+      key: '12-3'
     },
-    component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/xlsxDemo/index.vue')
+    component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/functional-unit/xlsxDemo/index.vue')
   },
   {
-    path: '/layout/qiniuDemo',
+    path: '/layout/functional-unit/qiniuDemo',
     name: 'qiniuDemo',
     meta: {
       title: '七牛云',
-      key: '10'
+      key: '12-4'
     },
-    component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/qiniuDemo/index.vue')
+    component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/functional-unit/qiniuDemo/index.vue')
   },
   {
-    path: '/layout/mapDemo',
+    path: '/layout/functional-unit/mapDemo',
     name: 'mapDemo',
     meta: {
       title: '地图',
-      key: '11'
+      key: '12-5'
     },
-    component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/mapDemo/index.vue')
+    component: () => import(/* webpackChunkName: "group-xlsxDemo" */ '@/views/functional-unit/mapDemo/index.vue')
+  },
+  {
+    path: '/layout/functional-unit/capaticy',
+    name: 'capaticy',
+    meta: {
+      title: 'echart示例',
+      key: '12-6'
+    },
+    component: () => import(/* webpackChunkName: "group-capaticy" */ '@/views/functional-unit/capaticy/index.vue')
+  },
+  {
+    path: '/layout/functional-unit/scrollList',
+    name: 'scrollList',
+    meta: {
+      title: '虚拟列表',
+      key: '12-7'
+    },
+    component: () => import(/* webpackChunkName: "group-scrollList" */ '@/views/functional-unit/scrollList/index.vue')
+  },
+  {
+    path: '/layout/functional-unit/draggableDemo',
+    name: 'draggableDemo',
+    meta: {
+      title: '拖动列表',
+      key: '12-8'
+    },
+    component: () => import(/* webpackChunkName: "group-scrollList" */ '@/views/functional-unit/draggableDemo/index.vue')
+  },
+  {
+    path: '/layout/functional-unit/AvueDemo',
+    name: 'AvueDemo',
+    meta: {
+      title: 'AvueDemo',
+      key: '12-9'
+    },
+    component: () => import(/* webpackChunkName: "group-scrollList" */ '@/views/functional-unit/AvueDemo/index.vue')
   }
+  /** 功能页 end */
 ]

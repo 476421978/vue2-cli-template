@@ -8,7 +8,7 @@
       <a-menu-item v-if="!item.childMenu" :key="item.key">
         <span>{{ item.name }}</span>
       </a-menu-item>
-      <sub-menu v-else :key="item.key" :menu-info="item" />
+      <sub-menu v-else :menu-info="item" />
     </template>
   </a-sub-menu>
 </template>
