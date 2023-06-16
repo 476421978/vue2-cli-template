@@ -205,6 +205,14 @@ export const menuList = [
         path: 'functional-unit/AvueDemo',
         auth: '',
         visible: false
+      },
+      {
+        key: '12-10',
+        name: 'videoDemo',
+        icon: 'bar-chart',
+        path: 'functional-unit/videoDemo',
+        auth: '',
+        visible: false
       }
     ]
   }

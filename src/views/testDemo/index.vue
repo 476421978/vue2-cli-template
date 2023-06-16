@@ -1,34 +1,23 @@
 <template>
-  <div class="virtual-list">
-    <VueVirtualScrollList :size="50" :remain="10" :benchmarks="[0, 10000]" :items="items">
-      <template slot-scope="{ item }">
-        <div class="item">{{ item }}</div>
-      </template>
-    </VueVirtualScrollList>
+  <div>
+    测试页
   </div>
 </template>
 
 <script>
-import VueVirtualScrollList from 'vue-virtual-scroll-list'
 export default {
-  components: { VueVirtualScrollList },
+  name: 'test',
   data() {
     return {
-      items: [] // 数据源
     }
   },
-  created() {
-    // 模拟生成大量数据
-    for (let i = 1; i <= 100000; i++) {
-      this.items.push(i)
-    }
+  methods: {
+  },
+  mounted() {
+  },
+  beforeDestroy() {
   }
 }
 </script>
 
-<style scoped>
-.virtual-list .item {
-  height: 50px;
-  line-height: 50px;
-}
-</style>
+<style scoped></style>
