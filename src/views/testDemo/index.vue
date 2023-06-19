@@ -7,6 +7,8 @@
 <script>
 export default {
   name: 'test',
+  components: {
+  },
   data() {
     return {
     }
@@ -20,4 +22,4 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

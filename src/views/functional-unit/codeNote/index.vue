@@ -12,12 +12,21 @@
       <div class="theme-txt">文字 {{ globalSetting.theme }}</div>
       <button @click="onChangeTheme">切换</button>
     </div>
+
+    <br />
+    <div>
+      <drag-verify ref="dragVerifyRef" @drag-event="onDragEvent" />
+    </div>
   </div>
 </template>
 
 <script>
 import { initTheme } from '@/styles/theme.js'
+import dragVerify from '@/components/dragVerify'
 export default {
+  components: {
+    'drag-verify': dragVerify
+  },
   data() {
     return {
       orderInfo: {
@@ -35,6 +44,9 @@ export default {
     }
   },
   methods: {
+    onDragEvent(status) {
+      status && this.Toast({ type: 'success', msg: '验证通过' })
+    },
     onChangeTheme() {
       this.globalSetting.theme = this.globalSetting.theme === 'light' ? 'dark' : 'light'
       initTheme(this.globalSetting.theme)
@@ -49,6 +61,7 @@ export default {
 .vw-test {
   font-size: 28px;
 }
+
 .vw-test-2 {
   font-size: 32px;
 }
@@ -58,6 +71,7 @@ export default {
   height: 200px;
   border: 1px solid red;
   background: var(--bg);
+
   .theme-txt {
     color: var(--color);
   }
