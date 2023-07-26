@@ -17,18 +17,39 @@
     <div>
       <drag-verify ref="dragVerifyRef" @drag-event="onDragEvent" />
     </div>
+
+    <br />
+    <div>
+      <drag-verify-img
+        ref="dragVerify"
+        :imgsrc="img"
+        :isPassing.sync="isPassing"
+        :showRefresh="true"
+        text="请按住滑块拖动"
+        successText="验证通过"
+        handlerIcon="el-icon-d-arrow-right"
+        successIcon="el-icon-circle-check"
+        @refresh="refresh"
+        @passcallback="passBack"
+      >
+      </drag-verify-img>
+    </div>
   </div>
 </template>
 
 <script>
 import { initTheme } from '@/styles/theme.js'
 import dragVerify from '@/components/dragVerify'
+import DragVerifyImg from '@/components/verifyImg'
 export default {
   components: {
-    'drag-verify': dragVerify
+    'drag-verify': dragVerify,
+    'drag-verify-img': DragVerifyImg
   },
   data() {
     return {
+      img: '/images/verifyImg.png',
+      isPassing: false,
       orderInfo: {
         a: {
           b: {
@@ -44,6 +65,8 @@ export default {
     }
   },
   methods: {
+    passBack() {},
+    refresh() {},
     onDragEvent(status) {
       status && this.Toast({ type: 'success', msg: '验证通过' })
     },

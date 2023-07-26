@@ -1,25 +1,7 @@
 <template>
-  <div>
-    测试页
-  </div>
+  <div>测试</div>
 </template>
 
-<script>
-export default {
-  name: 'test',
-  components: {
-  },
-  data() {
-    return {
-    }
-  },
-  methods: {
-  },
-  mounted() {
-  },
-  beforeDestroy() {
-  }
-}
-</script>
+<script></script>
 
 <style lang="scss" scoped></style>
