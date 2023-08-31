@@ -1,7 +1,7 @@
 module.exports = {
   // 一行最多 120 字符
 
-  printWidth: 120,
+  printWidth: 140,
 
   // 使用 2 个空格缩进
   tabWidth: 2,
@@ -75,5 +75,4 @@ module.exports = {
   // 格式化嵌入的内容222
 
   embeddedLanguageFormatting: 'auto'
-  
 }

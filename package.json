@@ -9,7 +9,8 @@
     "build:dev": "vue-cli-service build --mode development",
     "build:test": "vue-cli-service build --mode test",
     "build:prod": "vue-cli-service build --mode production",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier": "prettier --config ./.prettierrc.js --write \"./**/*.{js,vue}\" "
   },
   "lint-staged": {
     "*.{js,vue,ts,jsx,tsx}": [
