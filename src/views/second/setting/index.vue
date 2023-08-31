@@ -10,11 +10,7 @@
           </a-form-item>
 
           <a-form-item name="describe" label="自我介绍">
-            <a-textarea
-              v-model:value="formState.describe"
-              placeholder="请输入自我介绍"
-              :auto-size="{ minRows: 2, maxRows: 5 }"
-            />
+            <a-textarea v-model:value="formState.describe" placeholder="请输入自我介绍" :auto-size="{ minRows: 2, maxRows: 5 }" />
           </a-form-item>
 
           <a-form-item name="email" label="电子邮件">

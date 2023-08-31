@@ -20,7 +20,7 @@ export default {
 
   /** 获取下拉框列表 */
   AgentSelect: (data) => POST('/agent_select', data),
-  
+
   /** 级联 */
   ProvinceCityDistrict: (data) => POST('/province_city_district', data)
 }

@@ -16,7 +16,7 @@
     <!-- 上传图片 -->
     <van-uploader
       ref="vanUploaderRef"
-      :before-read="file => beforeRead({ file, size: 2 })"
+      :before-read="(file) => beforeRead({ file, size: 2 })"
       :after-read="afterRead"
       style="visibility: hidden"
     />
@@ -71,7 +71,7 @@ export default {
           toolbar: {
             container: toolbarOptions, // 工具栏
             handlers: {
-              image: value => {
+              image: (value) => {
                 if (value) {
                   this.$refs.vanUploaderRef.chooseFile()
                 } else {
@@ -111,7 +111,7 @@ export default {
     },
     // 上传图片前 压缩
     beforeRead({ file, size = 5 }) {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         new Compressor(file, {
           convertSize: size,
           success: resolve,
@@ -152,7 +152,7 @@ export default {
         .post('https://upload-z2.qiniup.com', formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         })
-        .then(res => {
+        .then((res) => {
           // 获取富文本组件实例
           let quill = this.$refs.myQuillEditor.quill
           // 如果上传成功
@@ -167,7 +167,7 @@ export default {
             this.$Notify({ type: 'danger', message: '图片插入失败，请重新上传' })
           }
         })
-        .catch(err => {
+        .catch((err) => {
           this.$Notify({ type: 'danger', message: '上传失败，请重新上传' })
         })
         .finally(() => {

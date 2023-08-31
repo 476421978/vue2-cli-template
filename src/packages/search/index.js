@@ -5,6 +5,4 @@ TSearch.install = function (Vue) {
   Vue.component(TSearch.name, TSearch)
 }
 
-export {
-  TSearch
-}
+export { TSearch }

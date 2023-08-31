@@ -16,25 +16,25 @@ export default {
     }
   },
   computed: {
-    ...mapState([ 'stoUser', 'globalSetting' ])
+    ...mapState(['stoUser', 'globalSetting'])
   },
   methods: {
     /**
-   * 格式化时间
-   * @param {*} date
-   * @param {*} guide
-   * @returns YYYY-MM-DD HH:mm:ss
-   */
+     * 格式化时间
+     * @param {*} date
+     * @param {*} guide
+     * @returns YYYY-MM-DD HH:mm:ss
+     */
     getFormatDate(date, guide = 'YYYY-MM-DD HH:mm:ss') {
       if (!date) return ''
       return dayjs(date).format(guide)
     },
     /**
-  * 正则表达式验证
-  * @param {*} value 数据内容
-  * @param {*} reg 正则表达式名称
-  * @returns true/false
-  */
+     * 正则表达式验证
+     * @param {*} value 数据内容
+     * @param {*} reg 正则表达式名称
+     * @returns true/false
+     */
     verifyReg(value, reg) {
       if (!this.RegArr[reg]) {
         alert('找不到验证')

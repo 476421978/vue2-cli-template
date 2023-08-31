@@ -40,7 +40,8 @@ export default {
       if (point) pointMarker = point
       if (!pointMarker) return false
       var marker
-      if (img) { // 自定义图片
+      if (img) {
+        // 自定义图片
         var markerIcon = new BMapGL.Icon(require(`@/assets/${img === 'start' ? 'icon_up.png' : 'icon_down.png'}`), new BMapGL.Size(30, 42))
         marker = new BMapGL.Marker(pointMarker, {
           icon: markerIcon,
@@ -62,7 +63,7 @@ export default {
      * 显示和隐藏自定义覆盖物，可以继承overlay的hide();或者show()方法。
      *  */
     // 设置司机 label 标记
-    setLabelMarker({lat, lag, num = 3, name='司机'}) {
+    setLabelMarker({ lat, lag, num = 3, name = '司机' }) {
       let pointLabel = new BMapGL.Point(lat, lag)
       let content = `
         <div class="map-marker-box">
@@ -118,7 +119,7 @@ export default {
     getOrderList() {
       for (let i = 0; i < 5; i++) {
         const num = 0.005 * i
-        const label = this.setLabelMarker({lat: 116.404 + num, lag:39.915 + num})
+        const label = this.setLabelMarker({ lat: 116.404 + num, lag: 39.915 + num })
         this.driverList.push(label)
       }
     },
@@ -157,9 +158,9 @@ export default {
   background: #eaf0fe;
   border-radius: 4px;
   border: 1px solid #7dbde9;
-  .img{
-    width:42px;
-    height:32px;
+  .img {
+    width: 42px;
+    height: 32px;
   }
 }
 .marker-arrows,

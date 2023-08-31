@@ -5,7 +5,7 @@ export default {
   SignScript: 'Vue3', // 签名加密密钥
   GlobalSetting: {
     theme: 'light', // 主题
-    isShowCrumb: true, // 隐藏面包屑
+    isShowCrumb: true // 隐藏面包屑
     // bgColorKey: '5' // 默认颜色
   }
 }

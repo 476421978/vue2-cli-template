@@ -12,16 +12,7 @@ import { TitleComponent, ToolboxComponent, TooltipComponent, GridComponent, Lege
 import { LineChart } from 'echarts/charts'
 import { UniversalTransition } from 'echarts/features'
 import { optionLine } from '../data'
-use([
-  CanvasRenderer,
-  TitleComponent,
-  ToolboxComponent,
-  TooltipComponent,
-  GridComponent,
-  LegendComponent,
-  LineChart,
-  UniversalTransition
-])
+use([CanvasRenderer, TitleComponent, ToolboxComponent, TooltipComponent, GridComponent, LegendComponent, LineChart, UniversalTransition])
 export default {
   data() {
     return {

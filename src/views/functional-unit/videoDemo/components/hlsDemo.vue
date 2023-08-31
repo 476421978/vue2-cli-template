@@ -15,19 +15,19 @@ export default {
   },
   methods: {
     payHls() {
-      const videoSrc = this.videoSrc;
+      const videoSrc = this.videoSrc
       const video = this.$refs.videoPlayer
       if (Hls.isSupported()) {
         var hls = new Hls()
         hls.loadSource(videoSrc)
         hls.attachMedia(video)
         hls.on(Hls.Events.MANIFEST_PARSED, function () {
-          video.play();
-        });
+          video.play()
+        })
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = videoSrc;
+        video.src = videoSrc
         video.addEventListener('loadedmetadata', function () {
-          video.play();
+          video.play()
         })
       }
     }
@@ -41,7 +41,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style scoped></style>

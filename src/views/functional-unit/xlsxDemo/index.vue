@@ -14,12 +14,7 @@
         :on-error="onUploadErr"
         :show-file-list="false"
       >
-        <el-button
-          :disabled="uploadState !== '导入' ? true : false"
-          style="width: 150px"
-          size="small"
-          type="primary"
-          v-popover:popover
+        <el-button :disabled="uploadState !== '导入' ? true : false" style="width: 150px" size="small" type="primary" v-popover:popover
           >{{ uploadState }}
         </el-button>
       </el-upload>
@@ -33,7 +28,7 @@
 
 <script>
 import * as XLSX from 'xlsx'
-import { upLoadDataLimit,classFiledNames,columnNames,list } from './data'
+import { upLoadDataLimit, classFiledNames, columnNames, list } from './data'
 import { excelExport, excelImport } from 'pikaz-excel-js'
 import ExportJsonExcel from 'js-export-excel'
 export default {
@@ -67,7 +62,7 @@ export default {
       for (let i = 1; i <= classFiledNames.length; i++) {
         this.bgStyleArr.push({
           cell: `${i}-1`,
-          fill: {fgColor: {rgb: 'B0C4DE'}}
+          fill: { fgColor: { rgb: 'B0C4DE' } }
         })
       }
       excelExport({
@@ -81,23 +76,24 @@ export default {
             cellStyle: this.bgStyleArr // 单元格样式
           },
           {
-          // 表格标题
-          title: "水果的味道1",
-          // 表头
-          tHeader: ["种类", "味道"],
-          // 数据键名
-          keys: ["name", "taste"],
-          // 表格数据
-          table: [{
-                  name: "荔枝",
-                  taste: "甜",
+            // 表格标题
+            title: '水果的味道1',
+            // 表头
+            tHeader: ['种类', '味道'],
+            // 数据键名
+            keys: ['name', 'taste'],
+            // 表格数据
+            table: [
+              {
+                name: '荔枝',
+                taste: '甜'
               },
               {
-                  name: "菠萝蜜",
-                  taste: "甜",
+                name: '菠萝蜜',
+                taste: '甜'
               }
-          ],
-          sheetName: "水果的味道1",
+            ],
+            sheetName: '水果的味道1'
           }
         ]
       })

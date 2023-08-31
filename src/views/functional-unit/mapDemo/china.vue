@@ -145,7 +145,6 @@ export default {
       var map_Chart = window.echarts.init(document.getElementById('map'))
       console.log('map_Chart', map_Chart)
 
-
       let option = {
         title: {
           text: '本群闸总鼠窝分布',

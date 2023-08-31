@@ -17,11 +17,7 @@
       <a-layout>
         <!-- 头部 -->
         <a-layout-header class="topMenu">
-          <a-icon
-            :type="collapsed ? 'menu-unfold' : 'menu-fold'"
-            class="trigger"
-            @click="() => (collapsed = !collapsed)"
-          />
+          <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" class="trigger" @click="() => (collapsed = !collapsed)" />
           <div class="user-wrapper">
             <a-dropdown :trigger="['hover']" placement="bottomRight">
               <div class="ant-dropdown-link" href="#">

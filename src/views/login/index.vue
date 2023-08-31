@@ -12,7 +12,7 @@
           <div class="logo-wrapper">
             <img src="@/assets/work_logo.png" />
           </div>
-          <div class="title margin-left">调试系统</div>
+          <div class="title margin-left">商城后台</div>
         </div>
         <div class="form-container">
           <div class="item-wrapper">
@@ -38,7 +38,7 @@
       </div>
     </div>
     <!-- 底部 -->
-    <div class="footer">CopyRight@{{getVersion}}</div>
+    <div class="footer">CopyRight@{{ getVersion }}</div>
   </div>
 </template>
 
@@ -246,7 +246,7 @@ export default {
     }
   }
 
-  .footer{
+  .footer {
     position: fixed;
     bottom: 1%;
     left: 50%;

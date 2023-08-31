@@ -201,8 +201,7 @@ export default [
       title: '拖动列表',
       key: '12-8'
     },
-    component: () =>
-      import(/* webpackChunkName: "group-scrollList" */ '@/views/functional-unit/draggableDemo/index.vue')
+    component: () => import(/* webpackChunkName: "group-scrollList" */ '@/views/functional-unit/draggableDemo/index.vue')
   },
   {
     path: '/layout/functional-unit/AvueDemo',
@@ -222,8 +221,7 @@ export default [
       title: 'videoDemo',
       key: '12-10'
     },
-    component: () =>
-      import(/* webpackChunkName: "group-scrollList" */ '@/views/functional-unit/videoDemo/dplayerDemo.vue')
+    component: () => import(/* webpackChunkName: "group-scrollList" */ '@/views/functional-unit/videoDemo/dplayerDemo.vue')
   }
   /** 视频播放 end */
 ]

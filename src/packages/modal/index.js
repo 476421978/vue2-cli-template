@@ -5,6 +5,4 @@ TModal.install = function (Vue) {
   Vue.component(TModal.name, TModal)
 }
 
-export {
-  TModal
-}
+export { TModal }

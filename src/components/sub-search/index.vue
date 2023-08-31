@@ -5,20 +5,9 @@
         <template v-for="(item, index) in searchData">
           <el-col :span="item.span || 6">
             <el-form-item :label="`${item.title}`" :prop="item.fName" :rules="item.rules ? item.rules : []">
-              <t-input
-                v-if="item.comType === 'input'"
-                :id="item.id"
-                v-model="item.fValue"
-                :placeholder="item.placeholder"
-                clearable
-              />
+              <t-input v-if="item.comType === 'input'" :id="item.id" v-model="item.fValue" :placeholder="item.placeholder" clearable />
               <t-select v-if="item.comType === 'select'" :id="item.id" v-model="item.fValue" :options="item.options" />
-              <t-cascader
-                v-if="item.comType === 'cascader'"
-                :id="item.id"
-                v-model="item.fValue"
-                :options="item.options"
-              />
+              <t-cascader v-if="item.comType === 'cascader'" :id="item.id" v-model="item.fValue" :options="item.options" />
 
               <t-date-picker
                 v-if="item.comType === 'datePicker'"
@@ -27,20 +16,11 @@
                   placeholder: item.placeholder,
                   type: item.type,
                   align: item.align,
-                  pickerOptions: item.pickerOptions
-                    ? item.type === 'date'
-                      ? pickerOptions
-                      : pickerOptionsTwo
-                    : limitDay
+                  pickerOptions: item.pickerOptions ? (item.type === 'date' ? pickerOptions : pickerOptionsTwo) : limitDay
                 }"
                 v-model="item.fValue"
               />
-              <TAarea
-                v-if="item.comType === 'area'"
-                :areaArr="item.areaArr"
-                :fValue="item.fValue"
-                @get-cascade="getCascade"
-              />
+              <TAarea v-if="item.comType === 'area'" :areaArr="item.areaArr" :fValue="item.fValue" @get-cascade="getCascade" />
             </el-form-item>
           </el-col>
         </template>

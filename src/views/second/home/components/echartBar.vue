@@ -1,6 +1,6 @@
 <template>
   <div class="echart-bar">
-    <v-chart class="chart" style="min-height:300px;width:100%;" :option="optionBar" autoresize />
+    <v-chart class="chart" style="min-height: 300px; width: 100%" :option="optionBar" autoresize />
   </div>
 </template>
 

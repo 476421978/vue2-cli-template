@@ -35,7 +35,7 @@ export default {
       map.addControl(new BMap.ScaleControl()) // 添加比例尺控件
       map.addControl(new BMap.OverviewMapControl()) // 缩略地图
       map.addControl(new BMap.MapTypeControl())
-      map.setCurrentCity("北京"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用   
+      map.setCurrentCity('北京') // 仅当设置城市信息时，MapTypeControl的切换功能才能可用
     },
     defaultMarker({ lat, lag, point, img }) {
       var pointMarker
@@ -45,10 +45,7 @@ export default {
       var marker
       if (img) {
         // 自定义图片
-        var markerIcon = new BMap.Icon(
-          require(`@/assets/${img === 'start' ? 'icon_up.png' : 'icon_down.png'}`),
-          new BMap.Size(30, 42)
-        )
+        var markerIcon = new BMap.Icon(require(`@/assets/${img === 'start' ? 'icon_up.png' : 'icon_down.png'}`), new BMap.Size(30, 42))
         marker = new BMap.Marker(pointMarker, {
           icon: markerIcon,
           offset: new BMap.Size(0, -20) // 设置标注的偏移量
@@ -85,7 +82,7 @@ export default {
         offset: new BMap.Size(10, 10), // 设置标注的偏移量
         zIndex: 101
       })
-      
+
       // 样式
       label.setStyle({
         color: '#333',

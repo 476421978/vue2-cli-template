@@ -41,7 +41,6 @@ export const upLoadDataLimit = [
   }
 ]
 
-
 export const classFiledNames = [
   'agent',
   'realName',
@@ -58,7 +57,7 @@ export const classFiledNames = [
   'orderNum'
 ]
 
-export const columnNames =  [
+export const columnNames = [
   '所属公司',
   '司机姓名',
   '司机电话',
@@ -74,7 +73,7 @@ export const columnNames =  [
   '完成单量'
 ]
 
-export const list =  [
+export const list = [
   {
     agent: '番禺测试公司',
     realName: '哈哈',

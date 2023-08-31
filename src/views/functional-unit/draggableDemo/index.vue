@@ -21,7 +21,7 @@
 
 <script>
 import draggable from 'vuedraggable'
-let id = 1;
+let id = 1
 export default {
   components: {
     draggable

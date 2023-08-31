@@ -2,12 +2,7 @@
   <div>
     <a-row :gutter="24">
       <a-col :md="6" :sm="24">
-        <a-input-search
-          v-model:value="searchTxt"
-          placeholder="请输入待搜索内容"
-          style="width: 200px"
-          @search="onSearch"
-        />
+        <a-input-search v-model:value="searchTxt" placeholder="请输入待搜索内容" style="width: 200px" @search="onSearch" />
       </a-col>
       <a-col :md="6" :sm="24">
         <a-button type="primary" @click="onAddRole">增加角色</a-button>
@@ -49,12 +44,7 @@
       </div>
     </a-table>
 
-    <updateRoleModal
-      ref="updateRoleModalRef"
-      :roleInfo="roleInfo"
-      :roleType="roleType"
-      @refresh-data="getRoleList"
-    ></updateRoleModal>
+    <updateRoleModal ref="updateRoleModalRef" :roleInfo="roleInfo" :roleType="roleType" @refresh-data="getRoleList"></updateRoleModal>
   </div>
 </template>
 
@@ -106,7 +96,7 @@ export default {
       })
     },
     onSearch() {
-      this.Toast({type: 'info',msg: `${this.searchTxt}`})
+      this.Toast({ type: 'info', msg: `${this.searchTxt}` })
     },
     onDetail(item) {
       this.roleType = 'Detail'

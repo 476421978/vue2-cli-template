@@ -26,9 +26,9 @@ export default {
       this.player = new DPlayer({
         container: this.$refs.player,
         video: {
-          url: this.urlMp4,
-        },
-      });
+          url: this.urlMp4
+        }
+      })
     },
     pyM3u8() {
       this.player = new DPlayer({
@@ -38,18 +38,17 @@ export default {
           type: 'customHls',
           customType: {
             customHls: function (video, player) {
-              var videoSrc = this.urlM3u8;
+              var videoSrc = this.urlM3u8
               if (Hls.isSupported()) {
-                var hls = new Hls();
-                hls.loadSource(video.src);
-                hls.attachMedia(video);
+                var hls = new Hls()
+                hls.loadSource(video.src)
+                hls.attachMedia(video)
+              } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = videoSrc
               }
-              else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = videoSrc;
-              }
-            },
-          },
-        },
+            }
+          }
+        }
       })
     }
   },

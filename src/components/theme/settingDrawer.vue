@@ -29,8 +29,8 @@
     <h3>全屏</h3>
     <a-row>
       <a-col :lg="24" :md="24" :sm="24" :xs="24">
-        <a-icon v-if="isFullscreen" type="fullscreen"  @click="onScreen"  />
-        <a-icon v-else type="fullscreen-exit"  @click="onScreen" />
+        <a-icon v-if="isFullscreen" type="fullscreen" @click="onScreen" />
+        <a-icon v-else type="fullscreen-exit" @click="onScreen" />
       </a-col>
     </a-row>
   </a-drawer>
@@ -44,8 +44,7 @@ export default {
   props: {
     visible: Boolean
   },
-  components: {
-  },
+  components: {},
   data() {
     return {
       isFullscreen: false

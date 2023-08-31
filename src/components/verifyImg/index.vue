@@ -1,15 +1,8 @@
 <template>
   <div class="drag-verify-container">
     <div :style="dragVerifyImgStyle">
-
-      <img ref="checkImg" :src="imgsrc" @load="checkimgLoaded" style="width: 100%; " alt="" />
-      <div
-        class="move-bar"
-        :class="{ goFirst: isOk, goKeep: isKeep }"
-        :style="movebarStyle"
-        ref="moveBar"
-        v-show="showBar"
-      ></div>
+      <img ref="checkImg" :src="imgsrc" @load="checkimgLoaded" style="width: 100%" alt="" />
+      <div class="move-bar" :class="{ goFirst: isOk, goKeep: isKeep }" :style="movebarStyle" ref="moveBar" v-show="showBar"></div>
       <div class="clip-bar" :style="clipbarStyle" ref="clipBar"></div>
       <div class="refresh" v-if="showRefresh && !isPassing">
         <i :class="refreshIcon" @click="refreshimg"></i>

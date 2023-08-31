@@ -5,17 +5,11 @@
       <img style="width: 50px; height: 50px" src="@/assets/upload_example.jpg" />
     </div>
 
-    <el-upload
-      class="avatar-uploader"
-      :show-file-list="false"
-      :action="domain"
-      :http-request="upQiniu"
-      :before-upload="beforeUpload"
-    >
+    <el-upload class="avatar-uploader" :show-file-list="false" :action="domain" :http-request="upQiniu" :before-upload="beforeUpload">
       <img v-if="imageUrl" :src="imageUrl" class="avatar" />
       <i v-else class="el-icon-plus avatar-uploader-icon" />
     </el-upload>
-    <div>外链地址：{{imageUrl}}</div>
+    <div>外链地址：{{ imageUrl }}</div>
 
     <!-- 裁剪logo -->
     <el-dialog title="裁剪" :visible.sync="imageCut_pop" width="50%" height="800px" :before-close="onHideCut">

@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import './router/permission'
 import store from './store'
-import {setStorage, getStorage, removeStorage, getAllStorage, clearStorage} from './utils/storage'
+import { setStorage, getStorage, removeStorage, getAllStorage, clearStorage } from './utils/storage'
 
 // 全局引入elementUi
 import ElementUI from 'element-ui'
@@ -59,10 +59,10 @@ Vue.prototype.$isMobile = navigator.userAgent.match(
 Vue.prototype.$store = store
 // storage
 Vue.prototype.$setStorage = setStorage
-Vue.prototype.$getStorage = getStorage 
-Vue.prototype.$removeStorage = removeStorage 
-Vue.prototype.$getAllStorage = getAllStorage 
-Vue.prototype.$clearStorage = clearStorage 
+Vue.prototype.$getStorage = getStorage
+Vue.prototype.$removeStorage = removeStorage
+Vue.prototype.$getAllStorage = getAllStorage
+Vue.prototype.$clearStorage = clearStorage
 
 // 模拟数据mock 会拦截请求
 import '../mock/index.js'

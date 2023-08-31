@@ -1,14 +1,7 @@
 <template>
   <div class="t-area-com">
-    <template v-for="(item, index) in TAareaArr" >
-      <el-select
-        :key="index"
-        v-model="item.id"
-        class="area-select"
-        :placeholder="item.placeholder"
-        clearable
-        @change="changeArea(item)"
-      >
+    <template v-for="(item, index) in TAareaArr">
+      <el-select :key="index" v-model="item.id" class="area-select" :placeholder="item.placeholder" clearable @change="changeArea(item)">
         <el-option v-for="vItem in item.valueArr" :key="vItem.id" :label="vItem.name" :value="vItem.id" />
       </el-select>
     </template>

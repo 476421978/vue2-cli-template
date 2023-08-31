@@ -54,9 +54,7 @@
         </div>
 
         <div class="center-two-box" style="flex: 4">
-          <div class="title flex justify-center align-center width-100" style="height: 10%; float: left">
-            堆叠图1推移图
-          </div>
+          <div class="title flex justify-center align-center width-100" style="height: 10%; float: left">堆叠图1推移图</div>
           <div id="centerTwoDom" style="height: 100%; width: 100%"></div>
         </div>
 
@@ -93,10 +91,7 @@
           <div class="select-time">
             <div class="title hover-active" @click="onShow('rightOneVisible')">
               <span>{{ rightOneTimeArr[rightOneTimeArrIndex].label }}</span>
-              <img
-                :class="['arrow-right', rightOneVisible ? '' : 'click-90deg']"
-                src="../../../assets/capaticy/arrow_white.png"
-              />
+              <img :class="['arrow-right', rightOneVisible ? '' : 'click-90deg']" src="../../../assets/capaticy/arrow_white.png" />
             </div>
             <div v-show="rightOneVisible" class="options">
               <div
@@ -118,10 +113,7 @@
           <div class="select-time">
             <div class="title hover-active" @click="onShow('rightTwoVisible')">
               <span>{{ rightTwoTimeArr[rightTwoTimeArrIndex].label }}</span>
-              <img
-                :class="['arrow-right', rightTwoVisible ? '' : 'click-90deg']"
-                src="../../../assets/capaticy/arrow_white.png"
-              />
+              <img :class="['arrow-right', rightTwoVisible ? '' : 'click-90deg']" src="../../../assets/capaticy/arrow_white.png" />
             </div>
             <div v-show="rightTwoVisible" class="options">
               <div
@@ -134,9 +126,7 @@
               </div>
             </div>
           </div>
-          <div class="title flex justify-center align-center width-100" style="height: 7%; float: left">
-            堆叠图2推移图
-          </div>
+          <div class="title flex justify-center align-center width-100" style="height: 7%; float: left">堆叠图2推移图</div>
           <div id="rightTwoDom" style="height: 100%; width: 100%"></div>
         </div>
       </div>

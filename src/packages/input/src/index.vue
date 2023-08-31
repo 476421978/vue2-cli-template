@@ -1,11 +1,5 @@
 <template>
-  <el-input
-    :value="currentVal"
-    :placeholder="placeholder"
-    v-bind="$attrs"
-    v-on="$listeners"
-    @input="(e) => $emit('input', e)"
-  />
+  <el-input :value="currentVal" :placeholder="placeholder" v-bind="$attrs" v-on="$listeners" @input="(e) => $emit('input', e)" />
 </template>
 
 <script>

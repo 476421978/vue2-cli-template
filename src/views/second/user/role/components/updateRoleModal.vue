@@ -11,11 +11,7 @@
         </a-form-item>
 
         <a-form-item name="describe" label="描述">
-          <a-textarea
-            v-model:value="formState.describe"
-            placeholder="请输入角色的描述"
-            :auto-size="{ minRows: 2, maxRows: 5 }"
-          />
+          <a-textarea v-model:value="formState.describe" placeholder="请输入角色的描述" :auto-size="{ minRows: 2, maxRows: 5 }" />
         </a-form-item>
 
         <a-form-item name="web_auth_arr" label="权限角色">

@@ -1,13 +1,7 @@
 <template>
   <div class="t-input-com">
     <span v-if="title" class="title"> {{ title }}</span>
-    <el-input
-      class="input"
-      :value="currentVal"
-      :placeholder="placeholder"
-      v-bind="$attrs"
-      v-on="$listeners"
-    />
+    <el-input class="input" :value="currentVal" :placeholder="placeholder" v-bind="$attrs" v-on="$listeners" />
   </div>
 </template>
 
@@ -33,7 +27,7 @@ export default {
   emits: ['input'],
   data() {
     return {
-      currentVal: this.value,
+      currentVal: this.value
     }
   },
   watch: {
@@ -46,18 +40,16 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
-.t-input-com{
+.t-input-com {
   display: flex;
   justify-align: center;
   align-items: center;
-  .title{
+  .title {
     margin-right: 10px;
   }
-  .input{
-    flex:1;
+  .input {
+    flex: 1;
   }
 }
 </style>
-

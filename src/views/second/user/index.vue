@@ -3,12 +3,7 @@
     <div class="user-info">
       <a-row :gutter="24">
         <a-col :md="6" :sm="24">
-          <a-input-search
-            v-model:value="searchTxt"
-            placeholder="请输入待搜索内容"
-            style="width: 200px"
-            @search="onSearch"
-          />
+          <a-input-search v-model:value="searchTxt" placeholder="请输入待搜索内容" style="width: 200px" @search="onSearch" />
         </a-col>
         <a-col :md="6" :sm="24">
           <a-button type="primary" @click="onAddUser">增加用户</a-button>
@@ -60,12 +55,7 @@
       </a-table>
       <br /><br />
     </div>
-    <UpdateUserModal
-      ref="UpdateUserModalRef"
-      :userInfo="userInfo"
-      :userType="userType"
-      @refresh-data="getOrderList"
-    ></UpdateUserModal>
+    <UpdateUserModal ref="UpdateUserModalRef" :userInfo="userInfo" :userType="userType" @refresh-data="getOrderList"></UpdateUserModal>
   </div>
 </template>
 
@@ -113,7 +103,7 @@ export default {
     },
     // 搜索
     onSearch() {
-      this.Toast({type: 'info',msg: `${this.searchTxt}`})
+      this.Toast({ type: 'info', msg: `${this.searchTxt}` })
     },
     // 翻页
     handleTableChange(pag) {
